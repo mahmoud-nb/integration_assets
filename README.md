@@ -17,16 +17,16 @@ Dans ce projet, vous trouvez un exemple du code HTML responsive, simple à appre
 Tout d'abord, Veuillez inclure le ficher__forms.css_ dans vos projets. Ensuite, créer vos formulaires en respectant la structure HTML proposé dans le template (Voir le code source en plus bas).
 
 ```<form method="post" class="" > 
-    <!-- form row template start -->
-    <div class="formField">
-        <label for="itemId" class="required" >label texte </label>
-        <div class="formControl">
-            <input type="text" name="itemName" id="itemId" value="" />
-            <span class="messageBox error">Message... </span>
-        </div>
-    </div>
-    <!-- form row template end -->
-    ...
+	<!-- form row template start -->
+	<div class="formField">
+		<label for="itemId" class="required" >label texte </label>
+		<div class="formControl">
+			<input type="text" name="itemName" id="itemId" value="" />
+			<span class="messageBox error">Message... </span>
+		</div>
+	</div>
+	<!-- form row template end -->
+	...
 </form>```
 
 ## Paramétrage
@@ -48,10 +48,10 @@ Dans ce composant les formulaires est par defaut en mode verticale. en ajouter l
 Afin d'afficher un élément (input texte par exemple) du formulaire qui n'a pas de label, il suffit de n'a pas mettre le label dans le code HTML, et le style s’adapte. 
 
 ```<div class="formField">
-    <div class="formControl">
-        <!-- supprimer la balise label du code HTML -->
-        <input type="text" name="itemName" id="itemId" value="" />
-    </div>
+	<div class="formControl">
+		<!-- supprimer la balise label du code HTML -->
+		<input type="text" name="itemName" id="itemId" value="" />
+	</div>
 </div>``` 
 
 ### Le style des labels obligatoire
@@ -67,25 +67,25 @@ Dans ce composant, nous définissons quatre tailles différent pour un label *de
 _NB. Vous pouvez intervenir sur ces tailles dans le fichier forms.css suivant le besoin de vos projets._
 
 ```<form method="post" class="mediumLabel" > 
-    <!-- form row template start -->
-    <div class="formField">
-        <label class="required" >label texte </label>
-        ...
-    </div>
-    <!-- form row template end -->
-    ...
+	<!-- form row template start -->
+	<div class="formField">
+		<label class="required" >label texte </label>
+		...
+	</div>
+	<!-- form row template end -->
+	...
 </form>```
 
 Ou bien
 
 ```<form method="post" > 
-    <!-- form row template start -->
-    <div class="formField mediumLabel">
-        <label class="required" >label texte </label>
-        ...
-    </div>
-    <!-- form row template end -->
-    ...
+	<!-- form row template start -->
+	<div class="formField mediumLabel">
+		<label class="required" >label texte </label>
+		...
+	</div>
+	<!-- form row template end -->
+	...
 </form>```
 
 ### Label direction
