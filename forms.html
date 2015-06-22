@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Template des formulaires</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"> -->
+
+    <!-- Custom CSS -->
+    <link href="css/_form.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- <link href="css/_forms.css" rel="stylesheet"> -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <link rel="stylesheet" href="highlight/styles/monokai.css" />
+	
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="highlight/highlight.pack.js"></script>
+    <script>
+        $(document).ready(function() {
+          $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+          });
+        });
+        //hljs.initHighlightingOnLoad();
+    </script>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Git.Share</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Intégration graphique</a></li>
+					<li><a href="forms.html">Formulaires template</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="mainContainer">
+
+        
+
+            <div class="sideBar">
+                
+				
+				
+				
+				
+				
+				<h2 class="title">Options</h2>
+
+                <form id="configForm" method="post" action="#" enctype="multipart/form-data" class="horizontalForm">
+                    <h3 class="title">Form</h3>
+                    <!-- #### ### #### -->
+                    <div class="formField">
+                        <label for="item1">Direction</label>
+                        <div class="formControl">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-primary active">
+                                    <input type="radio" name="direction" value="ltr" id="option2" autocomplete="off" checked> 
+                                    Left to Tight (LTR)
+                                </label>
+                                <label class="btn btn-primary">
+                                    <input type="radio" name="direction" value="rtl" id="option1" autocomplete="off" > 
+                                    Right to Left (RTL)
+                                </label>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- #### ### #### -->
+                    <div class="formField">
+                        <label for="item1">Mode</label>
+                        <div class="formControl">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-primary active">
+                                    <input type="radio" name="horizontalForm" value="0" id="option2" autocomplete="off" checked >
+                                     Verticale
+                                </label>
+                                <label class="btn btn-primary">
+                                    <input type="radio" name="horizontalForm" value="1" id="option1" autocomplete="off" > 
+                                    Horizontale
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- #### ### #### -->
+                    <h3 class="title">Label</h3>
+                    <div class="formField">
+                        <label for="item1">Required</label>
+                        <div class="formControl">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-primary active">
+                                    <input type="radio" name="requiredLabel" value="1" id="requiredLabel1" autocomplete="off" checked >
+                                     Oui
+                                </label>
+                                <label class="btn btn-primary">
+                                    <input type="radio" name="requiredLabel" value="0" id="requiredLabel0" autocomplete="off" > 
+                                    Non
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="showIsHorizontalForm" style="display:none;">
+                        <div class="formField">
+                            <label for="item1">Size</label>
+                            <div class="formControl">
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-primary">
+                                        <input type="radio" name="labelStyle" value="smallLabel" id="option2" autocomplete="off" >
+                                         Small
+                                    </label>
+                                    <label class="btn btn-primary active">
+                                        <input type="radio" name="labelStyle" value="default" id="option1" autocomplete="off" checked > 
+                                        Default
+                                    </label>
+                                    <label class="btn btn-primary">
+                                        <input type="radio" name="labelStyle" value="mediumLabel" id="option1" autocomplete="off" > 
+                                        Medium
+                                    </label>
+                                    <label class="btn btn-primary">
+                                        <input type="radio" name="labelStyle" value="largeLabel" id="option1" autocomplete="off" > 
+                                        Large
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- #### ### #### -->
+                        <div class="formField">
+                            <label for="item1">Direction</label>
+                            <div class="formControl">
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-primary active">
+                                        <input type="radio" name="labelDirection" value="left" id="option2" autocomplete="off" checked> 
+                                        Left
+                                    </label>
+                                    <label class="btn btn-primary">
+                                        <input type="radio" name="labelDirection" value="right" id="option1" autocomplete="off" > 
+                                        Right
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- #### ### #### -->
+
+                </form>
+				
+				
+				
+				
+				
+				
+				
+				
+            </div>
+
+            <div class="mainContent">
+				<h1 class="title">Template des formulaires</h1>
+                <div class="row">
+                    <div class="col-md-9">
+                        <h2 class="title">Présentation</h2>
+                        <p>Ce <strong>composant</strong> présente un template HTML simple et facile à utiliser qui permet de générer une vaste variété des formulaires en HTML.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="forms_components.zip" class="downloadLink">download</a>
+                    </div>
+                </div>
+
+                
+
+                <h2 class="title">Code source et Usage</h2>
+
+                <!-- ************* -->
+                
+                <div role="tabpanel">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">HTML</a></li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">CSS</a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="home">
+                            <!-- #### -->
+<div class="codeRow">
+<pre><code class="html">&lt;body <span id="optDirRTL" style="display:none"> class="rtl"</span> >
+    
+    &lt;form method="post" class="<span id="opthzForm" style="display:none">horizontalForm</span><span id="optLabelDir" style="display:none"> rightLabels</span>" > 
+        &lt;!-- form row template start -->
+        &lt;div class="formField<span id="optLabelSize"></span>">
+            &lt;label for="itemId" class="<span id="optLabelRequired">required</span>" >label texte &lt;/label>
+            &lt;div class="formControl">
+                &lt;input type="text" name="itemName" id="itemId" value="" />
+                &lt;span class="messageBox error">Message... &lt;/span>
+            &lt;/div>
+        &lt;/div>
+        &lt;!-- form row template end -->
+        ...
+    &lt;/form>
+    
+&lt;/body></code></pre>
+</div>
+                            <!-- #### -->
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="profile">
+<pre><code class="html">.body{}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                  
+
+
+                <h2 class="title">Demo</h2>
+                    <div id="mainFormBox">
+                    <!-- Form -->
+                    <form id="mainForm" method="post" action="#" enctype="multipart/form-data" >
+                        <fieldset>
+                            <div class="formField">
+                                <label for="item1" class="required">Champ texte basique</label>
+                                <div class="formControl">
+                                    <input type="text" name="item1" id="item1" value="" required placeholder="Ecrivez ici..." >
+                                    <span class="messageBox">Message...</span>
+                                </div>
+                            </div>
+                            <!-- Row -->
+                            <div class="formField">
+                                <label for="item1" class="required">Champ obligatoire</label>
+                                <div class="formControl">
+                                    <input type="text" name="item1" id="item1" value="" required >
+                                    <span class="messageBox warning">Warning Message...</span>
+                                </div>
+                            </div>
+                            <!-- Row -->
+                            <div class="formField">
+                                <label for="autoFocus" class="required">Champ auto-focus</label>
+                                <div class="formControl">
+                                    <input type="text" name="item1" id="autoFocus" value="" auto-focus >
+                                    <span class="messageBox success">Success Message...</span>
+                                </div>
+                            </div>
+                            <!-- Row -->
+                            <div class="formField">
+                                <label for="email">Email</label>
+                                <div class="formControl">
+                                    <input type="email" name="email" id="email" class="mainControl" value="" required >
+                                </div>
+                            </div>
+                            <!-- Row -->
+                            <div class="formField">
+                                <label for="url">URL</label>
+                                <div class="formControl">
+                                    <input type="url" name="url" id="url" class="mainControl" value="" >
+                                </div>
+                            </div>
+                            <!-- Row -->
+                            <div class="formField">
+                                <label for="text">Champ au format spécifié</label>
+                                <div class="formControl">
+                                    <input type="text" name="text" id="text" class="mainControl" pattern="[A-Za-z]{3}" value="" >
+                                    <em class="messageBox">[A-Za-z]{3}</em>
+                                </div>
+                            </div>
+                            <!-- Row -->
+                            <div class="formField">
+                                <label for="item1">champ avec suggestions</label>
+                                <div class="formControl">
+                                    <input type="text" list="bieres" name="item1" id="choix_bieres" value="" >
+                                    <datalist id="bieres">
+                                        <option value="Meteor">Meteor</option>
+                                        <option value="Pils">Pils</option>
+                                        <option value="Kronenbourg">Kronenbourg</option>
+                                        <option value="Grimbergen">Grimbergen</option>
+                                    </datalist>
+                                </div>
+                            </div>
+                            <!-- Row -->
+                            <div class="formField">
+                                <label for="number" class="required">Champ numérique</label>
+                                <div class="formControl">
+                                    <input type="number" name="number" id="number" class="mainControl" step="1" min="-5" max="10" value="0" >
+                                </div>
+                            </div>
+                            <!-- Row -->
+                            <div class="formField">
+                                <label for="date" class="required">Champ Date</label>
+                                <div class="formControl">
+                                    <input type="date" name="date" id="date" min="2010-08-14" max="2011-08-14" class="mainControl" value="2010-08-14" >
+                                </div>
+                            </div>
+                            <!-- Row -->
+                            <div class="formField">
+                                <label for="range" class="required">Champ range</label>
+                                <div class="formControl">
+                                    <input type="range" name="range" id="range" min="0" max="50" value="10" />
+                                </div>
+                            </div>
+                            <!-- Row -->
+                            <div class="formField">
+                                <label for="search" class="required">Champ search</label>
+                                <div class="formControl">
+                                    <input type="search" name="search" id="search" results="10" placeholder="Search..." class="mainControl" value="" >
+                                </div>
+                            </div>
+                            <!-- Row -->
+                            <div class="formField">
+                                <label for="speech" class="required">Champ speech</label>
+                                <div class="formControl">
+                                    <input type="text" name="speech" id="speech" x-webkit-speech />
+                                </div>
+                            </div>
+                            <!-- Row -->
+                            <div class="formField">
+                                <label for="tel" class="required">Champ tel</label>
+                                <div class="formControl inlineOptions">
+									<div class="optionItem">
+										<input type="tel" name="telS" id="telS" placeholder="555" maxlength="3" class="mainControl small" value="" />
+									</div>
+									<div class="optionItem">
+										<input type="tel" name="tel" id="tel" placeholder="(555) 555-5555"  pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$" class="mainControl large" value="" />
+									</div>
+                                </div>
+                            </div>
+                            <!-- Row -->
+                            <div class="formField">
+                                <label for="color" class="required">Champ color</label>
+                                <div class="formControl">
+                                    <input type="color" name="color" id="color" placeholder="e.g. #bbbbbb" value="" >
+                                </div>
+                            </div>
+                            
+
+
+
+                            <!-- Row -->
+                            <div class="formField">
+                                <label for="item3">Select</label>
+                                <div class="formControl">
+                                    <select id="item3">
+                                        <option value="1">Option 1</option>
+                                        <option value="2">Option 2</option>
+                                        <option value="3">Option 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Row -->
+                            <div class="formField">
+                                <label for="item2">Radios inline</label>
+                                <div class="formControl inlineOptions customRadio">
+									<div class="optionItem">
+										<input type="radio" name="radioField" id="radioField1" value="1" />
+										<label for="radioField1">Radio Field 1</label>
+									</div>
+									<div class="optionItem">
+										<input type="radio" name="radioField" id="radioField2" value="2" />
+										<label for="radioField2">Radio Field 2</label>
+									</div>
+									<div class="optionItem">
+										<input type="radio" name="radioField" id="radioField3" value="3" />
+										<label for="radioField3">Radio Field 3</label>
+									</div>
+                                </div>
+                            </div>
+                            <!-- Row -->
+                            <div class="formField">
+                                <label for="item2">Radios block</label>
+                                <div class="formControl blockOptions customCheckbox">   
+									<div class="optionItem">
+										<input type="checkbox" name="checkboxField2" id="checkboxField1" value="4" />
+										<label for="checkboxField1">Radio Field 4</label>
+									</div>
+									<div class="optionItem">
+										<input type="checkbox" name="checkboxField2" id="checkboxField2" value="5" />
+										<label for="checkboxField2">Radio Field 5</label>
+									</div>
+									<div class="optionItem">
+										<input type="checkbox" name="checkboxField2" id="checkboxField3" value="6" />
+										<label for="checkboxField3">Radio Field 6</label>
+									</div>
+                                </div>
+                            </div>
+                            <!-- Row -->
+                            <div class="formField">
+                                <label for="file">File</label>
+                                <div class="formControl">
+                                    <input type="file" name="files" id="files" value=""  />
+                                </div>
+                            </div>
+                            <!-- Row -->
+                            <div class="formField">
+                                <div class="formControl">
+                                    <textarea cols="20" rows="2" name="msg" id="msg" placeholder="Votre message..." ></textarea>
+                                </div>
+                            </div>
+                            <!-- Row -->
+                            <div class="actionsRow labelMargin">
+                                <input type="reset" name="reset" id="reset" class="btn grayBtn" value="Reset"  />
+                                <input type="submit" name="submit" id="submit" class="btn blueBtn" value="Valider"  />
+                            </div>
+                        </fieldset>
+                    </form>
+                    <!-- !Form -->
+                    </div>
+                
+
+                
+
+            </div>
+
+  
+
+    </div>
+    <!-- /.container -->
+
+    <div class="container">
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; 2015</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+
+        $("input[name=direction]:radio").change(function () {
+            $('#mainFormBox').attr('class', $(this).val());
+            if($(this).val() == "rtl"){
+                $("#optDirRTL").show();
+            }else{
+                $("#optDirRTL").hide();
+            }
+        });
+
+        $("input[name=horizontalForm]:radio").change(function () {
+            if($(this).val() == 1){
+                $('#mainForm').addClass('horizontalForm');
+                $('.showIsHorizontalForm').show();
+                $("#opthzForm").show();
+            }else{
+                $('#mainForm').removeClass('horizontalForm');
+                $('.showIsHorizontalForm').hide();
+                $("#opthzForm").hide();
+            }
+            
+        });
+
+        // labelStyle : mediumLabel ; smallLabel ; largeLabel
+        $("input[name=labelStyle]:radio").change(function () {
+            var labelStyle = $(this).val(); 
+
+            if(labelStyle == "default"){
+                $('#mainForm').removeClass('smallLabel');
+                $('#mainForm').removeClass('mediumLabel');
+                $('#mainForm').removeClass('largeLabel');
+            }else{
+                $('#mainForm').addClass(labelStyle);
+                $('#optLabelSize').hide();
+				
+				$('#optLabelSize').text( ' '+labelStyle );
+                $('#optLabelSize').show();
+            }
+            
+        });
+
+        // labelDirection
+        $("input[name=labelDirection]:radio").change(function () {
+            if($(this).val() == "right"){
+                $('#mainForm').addClass('rightLabels');
+                $('#optLabelDir').show();
+            }else{
+                $('#mainForm').removeClass('rightLabels');
+                $('#optLabelDir').hide();
+            }
+            
+        });
+
+        // requiredLabel
+        $("input[name=requiredLabel]:radio").change(function () {
+            if($(this).val() == "1"){
+                $('#mainForm').find('.formField > label').addClass('required');
+                $('#optLabelRequired').show();
+            }else{
+                $('#mainForm').find('.formField > label').removeClass('required');
+                $('#optLabelRequired').hide();
+            }
+            
+        });
+
+    </script>
+
+</body>
+
+</html>
