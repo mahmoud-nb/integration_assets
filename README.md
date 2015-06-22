@@ -26,7 +26,9 @@ Tout d'abord, Veuillez inclure le ficher__forms.css_ dans vos projets. Ensuite, 
 		</div>
 	</div>
 	<!-- form row template end -->
-	...
+
+
+
 </form>```
 
 ## Paramétrage
@@ -57,6 +59,7 @@ Afin d'afficher un élément (input texte par exemple) du formulaire qui n'a pas
 ### Le style des labels obligatoire
 
 Dans ce composant, le style par defaut des labels obligatoires est un étoile rouge à côté chaque label. Afin d'afficher cette étoile il suffit d'ajouter la classe *required* aux labels en question.
+
 _NB. Vous pouvez intervenir sur le style des labels obligatoires dans le fichier forms.css suivant le besoin de vos projets._
 
 ```<label class="required" >label texte </label>```
@@ -64,6 +67,7 @@ _NB. Vous pouvez intervenir sur le style des labels obligatoires dans le fichier
 ### Les tailles des labels
 
 Dans ce composant, nous définissons quatre tailles différent pour un label *default*, *small*, *meduim*, *large*, afin d'utiliser un de ces tailles il suffit d'ajouter la classe qui correspond à une taille si à la formulaire pour définir les tailles de tous les labels dedans, ou bien au balise parent du label même dont la classe est *formField* pour définir leur taille.
+
 _NB. Vous pouvez intervenir sur ces tailles dans le fichier forms.css suivant le besoin de vos projets._
 
 ```<form method="post" class="mediumLabel" > 
