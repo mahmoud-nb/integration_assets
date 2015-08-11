@@ -1,4 +1,10 @@
-﻿@charset "utf-8";
+﻿/**
+ * CSS : forms
+ * @autor : Mahmoud NBET
+ * @email : mahmoud.nbet@proxym-
+ */
+
+@charset "utf-8";
 
 /* --- Form --- */
 input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;*font-size:100%}
@@ -8,7 +14,7 @@ legend{}
 .formBlock{}
 
 /* --- Form Field (Row) --- */
-.formField{margin-bottom: 5px; /**/ padding-bottom: 3px; border-bottom: 1px dashed #dedede; }
+.formField{margin-bottom: 5px; /**/ padding-bottom: 5px; border-bottom: 1px dashed #dedede; }
 .mediumFields .formField{margin-bottom:12px; }
 .minFields .formField{margin-bottom:4px; }
 
@@ -109,13 +115,13 @@ select::-ms-expand {display: none;}
 .absoluteMsg .messageBox{position: absolute;top: 0;right: -190px;width: 180px;line-height: 20px;}
 
 /* Buttons */
-.btn{background-color: #5571ae; border:none; cursor: pointer; line-height:40px; min-height: 40px; color:#FFF;font-family: 'open_sanssemibold'; font-size: 16px; padding:0 24px; min-width: 100px; max-width:100%; -webkit-border-radius: 0; -webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; -o-appearance: none; appearance: none;}
+.btn{background-color: #5571ae; border:none; cursor: pointer; line-height:40px; min-height: 40px; color:#FFF;font-family: 'open_sanssemibold'; font-size: 14px; padding:0 8px; min-width: 100px; max-width:100%; -webkit-border-radius: 0; -webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; -o-appearance: none; appearance: none;}
 .btn:hover{background-color:#223765;}
 .btnSecond{border:1px solid #AFAFAF;line-height:17px;color:#FFF;border-radius: 5px;font-family: 'OpenSansSemibold';font-size: 10px;text-transform: uppercase;padding:0 2px;}
 .btn.short{line-height: 24px;}
 
 .btn.small{min-width: 80px;}
-.btn.medium{min-width: 141px;}
+.btn.medium{min-width: 138px;}
 .btn.large{min-width: 250px;}
 .btn.full{min-width: 100%; padding: 0 16px;}
 

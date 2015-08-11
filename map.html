@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Template des formulaires</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"> -->
+
+    <!-- Custom CSS -->
+    <link href="css/_form.css" rel="stylesheet">
+  	<style>
+  		.mainControl, .formControl input[type=text], .formControl input[type=email], .formControl input[type=password], .formControl input[type=tel], .formControl input[type="search"], .formControl textarea{display:block;}
+  		
+  		.isMapInited{display:none;}
+  		.codeItem{display:none;}
+  	</style>
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- <link href="css/_forms.css" rel="stylesheet"> -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <link rel="stylesheet" href="highlight/styles/monokai.css" />
+
+
+
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=ar"></script> -->
+         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&language=ar&libraries=drawing"></script>
+
+
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="js/gmap.js"></script>
+
+	
+    
+    <script src="highlight/highlight.pack.js"></script>
+    <script>
+        $(document).ready(function() {
+          $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+          });
+        });
+        //hljs.initHighlightingOnLoad();
+    </script>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Git.Share</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" >(X)HTML/CSS</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="forms.html">Formulaires template</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" >JavaScript</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="map.html">GMAP</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="mainContainer">
+
+        
+
+            <div class="sideBar">
+                
+
+				
+				
+				<h2 class="title">Options</h2>
+
+                <form id="configForm" method="post" action="#" enctype="multipart/form-data" class="horizontalForm">
+
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                          <h4 class="panel-title">
+                            <a role="button" data-code="initManageCode" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              Initialization MAP
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                          <div class="panel-body">
+                                <h3>Map config</h3>
+                                <div class="formField">
+                									<label for="showInfoWindow">showInfoWindow</label>
+                									<div class="formControl">
+                										<div class="btn-group" data-toggle="buttons">
+                											<label class="btn btn-primary active">
+                												<input type="radio" name="showInfoWindow" value="1" id="showInfoWindow1" autocomplete="off" checked >
+                												 Oui <sub>(default)</sub>
+                											</label>
+                											<label class="btn btn-primary">
+                												<input type="radio" name="showInfoWindow" value="0" id="showInfoWindow0" autocomplete="off" > 
+                												Non
+                											</label>
+                										</div>
+                									</div>
+                								</div>
+								<div class="formField">
+									<label for="enableBounds">enableBounds</label>
+									<div class="formControl">
+										<div class="btn-group" data-toggle="buttons">
+											<label class="btn btn-primary">
+												<input type="radio" name="enableBounds" value="1" id="enableBounds1" autocomplete="off" >
+												 Oui
+											</label>
+											<label class="btn btn-primary active">
+												<input type="radio" name="enableBounds" value="0" id="enableBounds0" autocomplete="off" checked > 
+												Non <sub>(default)</sub>
+											</label>
+										</div>
+									</div>
+								</div>
+								<!--
+								<div class="formField">
+									<label for="enableDirectionsService">enableDirectionsService</label>
+									<div class="formControl">
+										<div class="btn-group" data-toggle="buttons">
+											<label class="btn btn-primary active">
+												<input type="radio" name="enableDirectionsService" value="1" id="enableDirectionsService1" autocomplete="off" checked >
+												 Oui
+											</label>
+											<label class="btn btn-primary">
+												<input type="radio" name="enableDirectionsService" value="0" id="enableDirectionsService0" autocomplete="off" > 
+												Non <sub>(default)</sub>
+											</label>
+										</div>
+									</div>
+								</div>
+								-->
+								
+								<br />
+                                <h3>Map options</h3>
+								<div class="formField">
+									<label for="defaultLat">Latitude</label>
+									<div class="formControl">
+										<input type="text" name="defaultLat" id="defaultLat" value="25.046801" />
+									</div>
+								</div>
+								<div class="formField">
+									<label for="defaultLng">Longitude</label>
+									<div class="formControl">
+										<input type="text" name="defaultLng" id="defaultLng" value="55.181436" />
+									</div>
+								</div>
+								<div class="formField">
+									<label for="defaultZoom">Zoom</label>
+									<div class="formControl">
+										<input type="number" name="defaultZoom" id="defaultZoom" class="mainControl small" value="9" min="0" max="21" />
+									</div>
+								</div>
+								<div class="formField">
+									<label for="zoomControl">zoomControl</label>
+									<div class="formControl">
+										<div class="btn-group" data-toggle="buttons">
+											<label class="btn btn-primary active">
+												<input type="radio" name="zoomControl" value="1" id="zoomControl1" autocomplete="off" checked >
+												 Oui <sub>(default)</sub>
+											</label>
+											<label class="btn btn-primary">
+												<input type="radio" name="zoomControl" value="0" id="zoomControl0" autocomplete="off" > 
+												Non
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class="formField actionsRow labelMargin inlineOptions">
+									<div class="optionItem">
+										<input type="buttom" name="initMapBtn" id="initMapBtn" class="btn blueBtn medium" value="Init Map">
+									</div>
+									<div class="optionItem">
+										<input type="buttom" name="setOptionsBtn" id="setOptionsBtn" class="btn blueBtn medium isMapInited" value="Set Options">
+									</div>
+								</div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- ### ### ### -->
+                      <div class="panel panel-default isMapInited">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                          <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-code="addMarkerCode" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              markers
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                          <div class="panel-body">
+                            
+                            <h3>Marker options</h3>
+                            <div class="formField">
+                                <label for="markerTitle">Title</label>
+                                <div class="formControl">
+                                    <input type="text" name="markerTitle" id="markerTitle" value="" />
+                                </div>
+                            </div>
+                            <div class="formField">
+                                <label for="markerContent">Content</label>
+                                <div class="formControl">
+                                    <input type="text" name="markerContent" id="markerContent" value="" />
+                                </div>
+                            </div>
+                            <div class="formField">
+                                <label for="markerLatitude">Latitude</label>
+                                <div class="formControl inlineOptions">
+                                    <input type="text" name="markerLatitude" id="markerLatitude" value="25.046801" />
+                                </div>
+                            </div>
+                            <div class="formField">
+                                <label for="markerLongitude">Longitude</label>
+                                <div class="formControl">
+                                    <input type="text" name="markerLongitude" id="markerLongitude" value="55.181436" />
+                                </div>
+                            </div>
+							<div class="formField">
+                                <label for="markerIcon">Icon</label>
+                                <div class="formControl">
+                                    <select name="markerIcon" id="markerIcon">
+										<option value="" >Default</option>
+										<option value="red-marker.png" >Red</option>
+										<option value="pink.png" >Pink</option>
+									</select>
+                                </div>
+                            </div>
+                            <div class="actionsRow labelMargin">
+                                <input type="button" name="submit" id="addMarkerBtn" class="btn blueBtn" value="Add marker"  />
+                            </div>
+
+
+                          </div>
+                        </div>
+                      </div>
+                      <!-- ### ### ### -->
+                      <div class="panel panel-default isMapInited">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                          <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-code="searchCode" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                              Filter ans search
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                          <div class="panel-body">
+                            <div class="formField">
+                                <label for="searchBy">Search by</label>
+                                <div class="formControl">
+                                    <select name="searchBy" id="searchBy">
+										<option value="" >Default</option>
+										<option value="title" >Title</option>
+										<option value="content" >Content</option>
+										<option value="latitude" >Latitude</option>
+										<option value="longitude" >Longitude</option>
+									</select>
+                                </div>
+                            </div>
+							<div class="formField">
+                                <label for="searchVal">Search Value</label>
+                                <div class="formControl">
+                                    <input type="text" name="searchVal" id="searchVal" value="" />
+                                </div>
+                            </div>
+                            <div class="actionsRow labelMargin">
+                                <input type="button" name="submit" id="searchBtn" class="btn blueBtn" value="Filter"  />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+					  <!-- ### ### ### -->
+                      <div class="panel panel-default isMapInited">
+                        <div class="panel-heading" role="tab" id="heading4">
+                          <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-code="traceDirectionCode" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapseThree">
+                              Trace Direction
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
+                          <div class="panel-body">
+            								<div class="formField">
+            									<label for="originLat">originLat</label>
+            									<div class="formControl">
+            										<input type="text" name="originLat" id="originLat" value="25.110522" />
+            									</div>
+            								</div>
+            								<div class="formField">
+            									<label for="originLng">originLng</label>
+            									<div class="formControl">
+            										<input type="text" name="originLng" id="originLng" value="55.140773" />
+            									</div>
+            								</div>
+            								<div class="formField">
+            									<label for="destinationLat">destinationLat</label>
+            									<div class="formControl">
+            										<input type="text" name="destinationLat" id="destinationLat" value="25.204893" />
+            									</div>
+            								</div>
+            								<div class="formField">
+            									<label for="destinationLng">destinationLng</label>
+            									<div class="formControl">
+            										<input type="text" name="destinationLng" id="destinationLng" value="55.270663" />
+            									</div>
+            								</div>
+            								<div class="actionsRow labelMargin">
+            									<input type="button" name="traceDirection" id="traceDirection" class="btn blueBtn" value="Trace Direction"  />
+            								</div>
+                          </div>
+                        </div>
+                      </div>
+					  <!-- ### ### ### -->
+                      <div class="panel panel-default isMapInited">
+                        <div class="panel-heading" role="tab" id="heading5">
+                          <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-code="getDistanceCode" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="false" aria-controls="collapseThree">
+                              Distance
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+                          <div class="panel-body">
+                            Distance...
+                            <div class="formField">
+                              <label for="originLat">originLat</label>
+                              <div class="formControl">
+                                <input type="text" name="disOriginLat" id="disOriginLat" value="25.110522" />
+                              </div>
+                            </div>
+                            <div class="formField">
+                              <label for="disOriginLng">disOriginLng</label>
+                              <div class="formControl">
+                                <input type="text" name="disOriginLng" id="disOriginLng" value="55.140773" />
+                              </div>
+                            </div>
+                            <div class="formField">
+                              <label for="disDestinationLat">disDestinationLat</label>
+                              <div class="formControl">
+                                <input type="text" name="disDestinationLat" id="disDestinationLat" value="25.204893" />
+                              </div>
+                            </div>
+                            <div class="formField">
+                              <label for="disDestinationLng">disDestinationLng</label>
+                              <div class="formControl">
+                                <input type="text" name="disDestinationLng" id="disDestinationLng" value="55.270663" />
+                              </div>
+                            </div>
+                            <div class="actionsRow labelMargin">
+                              <input type="button" name="getDistance" id="getDistance" class="btn blueBtn" value="Get Distance"  />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+					  <!-- ### ### ### -->
+					  <div class="panel panel-default isMapInited">
+                        <div class="panel-heading" role="tab" id="heading6">
+                          <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-code="foundYouCode" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="false" aria-controls="collapseThree">
+                              Geolocation
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapse6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6">
+                          <div class="panel-body">
+
+
+                            <div class="formField">
+                              <label for="showInfoWindow">add Marker</label>
+                              <div class="formControl">
+                                <div class="btn-group" data-toggle="buttons">
+                                  <label class="btn btn-primary active">
+                                    <input type="radio" name="addUserMarker" value="1" id="addUserMarker1" autocomplete="off" checked >
+                                     Oui <sub>(default)</sub>
+                                  </label>
+                                  <label class="btn btn-primary">
+                                    <input type="radio" name="addUserMarker" value="0" id="addUserMarker0" autocomplete="off" > 
+                                    Non
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="actionsRow labelMargin">
+              								<input type="button" name="foundYou" id="foundYou" class="btn blueBtn" value="Found you!"  />
+              							</div>
+
+                          </div>
+                        </div>
+                      </div>
+					  <!-- ### ### ### -->
+					  <div class="panel panel-default isMapInited">
+                        <div class="panel-heading" role="tab" id="heading7">
+                          <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-code="drawingCode" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false" aria-controls="collapseThree">
+                              Dessiner des formes
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
+                          <div class="panel-body">
+                            <div class="actionsRow labelMargin">
+                              <input type="button" name="initDrawing" id="initDrawing" class="btn blueBtn" value="Init Drawing Service"  />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+					  <!-- ### ### ### -->
+                    </div>
+
+                </form>
+				
+            </div>
+
+            <div class="mainContent">
+				<h1 class="title">GMAP</h1>
+                <div class="row">
+                    <div class="col-md-9">
+                        <h2 class="title">Présentation</h2>
+                        <p>Ce <strong>composant</strong> présente une interface facile à utiliser qui permet de gérer une carte Goole map.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="js/gmap.js" class="downloadLink">download</a>
+                    </div>
+                </div>
+
+                <h2 class="title">Demo</h2>
+
+                <div id="mapContainer"></div>
+
+                
+
+                <h2 class="title">Code source et Usage</h2>
+
+                <!-- ************* -->
+                
+                <div role="tabpanel">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#javascript" aria-controls="javascript" role="tab" data-toggle="tab">JavaScript</a></li>
+                        <li role="presentation"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">HTML</a></li>
+                        <li role="presentation"><a href="#css" aria-controls="css" role="tab" data-toggle="tab">CSS</a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="javascript">
+                            <!-- #### -->
+
+<div class="codeRow">
+<pre id="initManageCode" class="codeItem"><code class="javascript">// mapContainer dom of map
+var mapContainer = document.getElementById('mapContainer');
+var options = {
+	center: { lat: 25.046801, lng: 55.181436 },
+	mapTypeControl: false,
+	zoom: 9
+};
+var config = {
+	showInfoWindow: true,
+	enableBounds: false
+};
+GMAP.init(mapContainer, options, config);
+</code></pre>
+
+<pre id="addMarkerCode" class="codeItem"><code class="javascript">var marker1 = {
+	"title": markerTitle,
+	"content": markerContent,
+	"image": "",
+	//"category":"markerCatg",
+	"latitude": markerLatitude, 
+	"longitude": markerLongitude
+	//"icon": 'images/icon1.png'
+};
+GMAP.addMarker(marker1);
+
+var marker2 = { ... };
+GMAP.addMarker(marker1).addMarker(marker2);
+
+var markers = [marker1, marker2] ;
+GMAP.addMarkers(markers);
+</code></pre>
+
+<!-- ### searchCode ### -->
+<pre id="searchCode" class="codeItem"><code class="javascript">var searchBy = 'title';
+var searchVal = 'value';
+GMAP.findBy(searchBy, searchVal);
+</code></pre>
+
+<!-- ### traceDirection ### -->
+<pre id="traceDirectionCode" class="codeItem"><code class="javascript">var options = {
+	'origin': Origin address,
+	'destination': Destination address
+};
+
+// Ou bien
+
+var options = {
+	'originLat': Origin latitude,
+	'originLng': Origin longitude,
+	'destinationLat': Destination latitude,
+	'destinationLng': Destination longitude
+};
+
+GMAP.traceDirectionDeferred(options).done(function(response){
+	// Success Response
+}).fail(function(response){
+	// Failure Response
+});
+</code></pre>
+
+<!-- ### foundYou ### -->
+<pre id="foundYouCode" class="codeItem"><code class="javascript">GMAP.getCurrentPositionDeferred(true).done(function(response){
+  console.log("getCurrentPosition :: DONE", response);
+
+  /*
+    response =  coords: Coordinates
+                  accuracy: 3712
+                  altitude: null
+                  altitudeAccuracy: null
+                  heading: null
+                  latitude: 35.825603
+                  longitude: 10.608395
+                  speed: null
+                timestamp: 1438596343058
+  */
+
+}).fail(function(response){
+  console.log("getCurrentPosition :: FAIL", response);
+});
+</code></pre>
+
+<!-- ### getDistanceCode ### -->
+<pre id="getDistanceCode" class="codeItem"><code class="javascript">// Distance en Km
+var distance = GMAP.distHaversine(point1Lat, point1Lon, point2Lat, point2Lon);
+</code></pre>
+
+<!-- ### drawingCode ### -->
+<pre id="drawingCode" class="codeItem"><code class="javascript">var options = {};
+GMAP.initDrawingShape(options);
+</code></pre>
+
+<!-- ### drawingCode ### -->
+<pre id="withRequireCode" class="codeItem"><code class="javascript">
+define([ "jquery" ], function( $ ) {
+  var GMAP = { ... };
+  return GMAP ;
+});
+</code></pre>
+
+</div>
+
+                            <!-- #### -->
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="home">
+                            <!-- #### -->
+<div class="codeRow">
+<pre><code class="html">&lt;div id="mapContainer">&lt;/div></code></pre>
+</div>
+                            <!-- #### -->
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="css">
+<pre><code class="css">#mapContainer{ height: 360px; }</code></pre>
+                        </div>
+                    </div>
+                </div>
+                  
+
+
+                
+
+                
+
+                
+
+            </div>
+
+  
+
+    </div>
+    <!-- /.container -->
+
+    <div class="container">
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; 2015</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+
+        //GMAP.init();
+		
+		// ## Init MAP ###########################################################
+		var mapContainer = document.getElementById('mapContainer');
+		var zoomControl = true ;
+		var config = {
+			showInfoWindow : true,
+			enableBounds : false,
+			enableDirectionsService : false,
+      showUserMarker: true
+		};
+		
+		$("input[name=showInfoWindow]:radio").change(function () {
+			config.showInfoWindow = $(this).val() == 1 ? true : false;
+		});
+		$("input[name=enableBounds]:radio").change(function () {
+			config.enableBounds = $(this).val() == 1 ? true : false;
+		});
+		$("input[name=enableDirectionsService]:radio").change(function () {
+			config.enableDirectionsService = $(this).val() == 1 ? true : false;
+		});
+		
+		$('#initMapBtn').on('click', function(){
+			options = getOptions();
+			GMAP.init(mapContainer, options, config);
+			$('.isMapInited').show();
+			showCode('#initManageCode');
+		});
+		
+		$('#setOptionsBtn').on('click', function(){
+			options = getOptions();
+			GMAP.setMapOptions(options);
+		});
+		
+		// ## Markers ###########################################################
+		$('#addMarkerBtn').on('click', function(){
+			var markerTitle = $('#markerTitle').val();
+			var markerContent = $('#markerContent').val();
+			var markerLatitude = $('#markerLatitude').val(); // 25.039801
+			var markerLongitude = $('#markerLongitude').val(); // 55.281436
+			var markerIcon = $('#markerIcon').val();
+			var markerIconPath = '';
+			if(markerIcon)
+				markerIconPath = 'images/markers/'+ markerIcon ; 
+			
+			marker = {
+				"title": markerTitle,
+				"content": markerContent,
+				//"image": "images/hidden-background6.png",
+				//"category":"car",
+				"latitude": markerLatitude, 
+				"longitude": markerLongitude,
+				"icon": markerIconPath 
+			};
+			GMAP.addMarker(marker);
+			//showCode('#addMarkerCode');
+		});
+		
+		function getOptions(){
+			$("input[name=zoomControl]:radio").change(function () {
+				console.log($(this).val());
+				zoomControl = $(this).val() == 1 ? true : false;
+			});
+		
+			var options = {
+				center: { lat: $("#defaultLat").val(), lng: $("#defaultLng").val() },
+				mapTypeControl: false,
+				mapTypeId: "roadmap", // "roadmap" || "terrain"
+				zoom: $("#defaultZoom").val(),
+				zoomControl: zoomControl
+			};
+			console.log(options);
+			
+			return options;
+		}
+		
+		// ## searchBtn ##################################################
+		$('#searchBtn').on('click', function(){
+      //showCode('#searchCode');
+			var searchBy = $('#searchBy').val();
+			var searchVal = $('#searchVal').val();
+      GMAP.findBy(searchBy, searchVal);
+		});
+		// ## trace Direction ##################################################
+		$('#traceDirection').on('click', function(){
+      //showCode('#traceDirectionCode');
+
+			var originLat = $('#originLat').val();
+			var originLng = $('#originLng').val();
+			var destinationLat = $('#destinationLat').val();
+			var destinationLng = $('#destinationLng').val();
+			
+			var options = {
+				'originLat':originLat,
+				'originLng':originLng,
+				'destinationLat':destinationLat,
+				'destinationLng':destinationLng
+			};
+			
+			GMAP.traceDirectionDeferred(options).done(function(response){
+				console.log("trace Direction :: DONE", response);
+			}).fail(function(response){
+				console.log("trace Direction :: DONE", response);
+			});
+		});
+    // ###################################################################### 
+    $('#getDistance').on('click', function(){
+      //showCode('#getDistanceCode');
+      var point1Lat = $('#disOriginLat').val();
+      var point1Lng = $('#disOriginLng').val();
+      var point2Lat = $('#disDestinationLat').val();
+      var point2Lng = $('#disDestinationLng').val();
+
+      distance = GMAP.distHaversine(point1Lat, point1Lng, point2Lat, point2Lng);
+
+      alert("Distance = "+ distance +" km");
+    });
+		// ######################################################################
+    $("input[name=addUserMarker]:radio").change(function () {
+      config.showUserMarker = $(this).val() == 1 ? true : false;
+    });
+		$('#foundYou').on('click', function(){
+      //showCode('#foundYouCode');
+			GMAP.getCurrentPositionDeferred({'showMarker': config.showUserMarker}).done(function(response){
+				console.log("getCurrentPosition :: DONE", response);
+        alert('Your position is: ' + response.coords.latitude+','+response.coords.longitude);
+			}).fail(function(response){
+				console.log("getCurrentPosition :: DONE", response);
+			});
+		});
+    // ######################################################################*
+    // 
+    $('#initDrawing').on('click', function(){
+      GMAP.initDrawingShape();
+    });
+		// ######################################################################
+    $('a[role=button]').on('click', function(){
+      code = $(this).data('code');
+      if(code) showCode('#'+code);
+    });
+
+		function showCode(codeId){
+			$('.codeItem').hide();
+			$(codeId).show();
+		}
+    </script>
+
+</body>
+
+</html>

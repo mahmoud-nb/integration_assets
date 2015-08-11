@@ -1,3 +1,8 @@
+/**
+ * @autor : Mahmoud NBET
+ * @email : mahmoud.nbet@proxym-
+ */
+
 @charset "utf-8";
 /* CSS Document */
 @import "fonts/OpenSans/stylesheet.css"; /* Importation du font-face */
@@ -16,6 +21,7 @@ a:active {}
 a img{ border:none;}
 
 pre{padding: 8px; margin: 0;}
+pre code{font-size: 12px;}
 
 h1{font-family: 'open_sansextrabold'; font-size:31px; line-height: 38px; color:#5873b1; font-weight: normal; text-transform: uppercase; margin-bottom:26px;}
 h1 > span{font-family: 'open_sansregular';}
@@ -75,3 +81,7 @@ h3.title{  background-color: #e8e8e8; padding: 4px 8px;}
   border-color: #ddd;
   border-width: 0px 1px 1px;
   padding: 10px;}
+
+
+
+  #mapContainer{ height: 360px; }
