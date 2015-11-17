@@ -86,7 +86,6 @@ border-width: 0px 1px 1px;
 padding: 10px;}
 
 
-
 #mapContainer{ height: 360px; }
 
 .subContentGroup{}
@@ -94,12 +93,10 @@ padding: 10px;}
 .subContent.active{display:block;}
 
 .environnements{overflow: hidden;padding: 8px 0 12px;}
-.env{ display: block;float: left; 
-  background-repeat: no-repeat;background-position: center bottom;background-size:auto 32px;
-  font-family: 'Trebuchet MS';font-size: 12px; line-height: 11px; font-weight: bold; color:#000; text-align: right;
-  width: 40px; height: 11px; padding: 4px 2px 41px;}
+.env{ display: block; float: left; width: 40px; height: 11px; padding: 4px 2px 36px;
+background-repeat: no-repeat;background-position: center bottom;background-size:auto 32px;
+font-family: 'Trebuchet MS';font-size: 12px; line-height: 11px; font-weight: bold; color:#000; text-shadow: 0px 0px 6px #444;letter-spacing: -1px; text-align: right;}
 .env + .env{ margin-left: 4px; }
-
 
 .env.chrome{background-image: url(../images/browsers/chrome.png);}
 .env.firefox{background-image: url(../images/browsers/firefox.png);}
