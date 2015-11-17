@@ -89,108 +89,33 @@
 
             <div class="sideBar">
                 
-				
-				
-				
-				
-				
-				<h2 class="title">Options</h2>
+				<h2 class="title">Type d'intégration</h2>
 
                 <form id="configForm" method="post" action="#" enctype="multipart/form-data" class="horizontalForm">
-                    <h3 class="title">Form</h3>
+                    
                     <!-- #### ### #### -->
                     <div class="formField">
-                        <label for="item1">Direction</label>
+                        
                         <div class="formControl">
                             <div class="btn-group" data-toggle="buttons">
                                 <label class="btn btn-primary active">
-                                    <input type="radio" name="direction" value="ltr" id="option2" autocomplete="off" checked> 
-                                    Left to Tight (LTR)
+                                    <input type="radio" name="typeIntg" value="ltr" id="typeIntg-classic" autocomplete="off" checked> 
+                                    PSD VERS HTML/CSS
                                 </label>
                                 <label class="btn btn-primary">
-                                    <input type="radio" name="direction" value="rtl" id="option1" autocomplete="off" > 
-                                    Right to Left (RTL)
+                                    <input type="radio" name="typeIntg" value="rtl" id="typeIntg-email" autocomplete="off" > 
+                                    PSD VERS EMAIL
+                                </label>
+								<label class="btn btn-primary">
+                                    <input type="radio" name="typeIntg" value="rtl" id="typeIntg-cms" autocomplete="off" > 
+                                    PSD VERS CMS
                                 </label>
                             </div>
                             
                         </div>
                     </div>
                     
-                    <!-- #### ### #### -->
-                    <div class="formField">
-                        <label for="item1">Mode</label>
-                        <div class="formControl">
-                            <div class="btn-group" data-toggle="buttons">
-                                <label class="btn btn-primary active">
-                                    <input type="radio" name="horizontalForm" value="0" id="option2" autocomplete="off" checked >
-                                     Verticale
-                                </label>
-                                <label class="btn btn-primary">
-                                    <input type="radio" name="horizontalForm" value="1" id="option1" autocomplete="off" > 
-                                    Horizontale
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- #### ### #### -->
-                    <h3 class="title">Label</h3>
-                    <div class="formField">
-                        <label for="item1">Required</label>
-                        <div class="formControl">
-                            <div class="btn-group" data-toggle="buttons">
-                                <label class="btn btn-primary active">
-                                    <input type="radio" name="requiredLabel" value="1" id="requiredLabel1" autocomplete="off" checked >
-                                     Oui
-                                </label>
-                                <label class="btn btn-primary">
-                                    <input type="radio" name="requiredLabel" value="0" id="requiredLabel0" autocomplete="off" > 
-                                    Non
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="showIsHorizontalForm" style="display:none;">
-                        <div class="formField">
-                            <label for="item1">Size</label>
-                            <div class="formControl">
-                                <div class="btn-group" data-toggle="buttons">
-                                    <label class="btn btn-primary">
-                                        <input type="radio" name="labelStyle" value="smallLabel" id="option2" autocomplete="off" >
-                                         Small
-                                    </label>
-                                    <label class="btn btn-primary active">
-                                        <input type="radio" name="labelStyle" value="default" id="option1" autocomplete="off" checked > 
-                                        Default
-                                    </label>
-                                    <label class="btn btn-primary">
-                                        <input type="radio" name="labelStyle" value="mediumLabel" id="option1" autocomplete="off" > 
-                                        Medium
-                                    </label>
-                                    <label class="btn btn-primary">
-                                        <input type="radio" name="labelStyle" value="largeLabel" id="option1" autocomplete="off" > 
-                                        Large
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- #### ### #### -->
-                        <div class="formField">
-                            <label for="item1">Direction</label>
-                            <div class="formControl">
-                                <div class="btn-group" data-toggle="buttons">
-                                    <label class="btn btn-primary active">
-                                        <input type="radio" name="labelDirection" value="left" id="option2" autocomplete="off" checked> 
-                                        Left
-                                    </label>
-                                    <label class="btn btn-primary">
-                                        <input type="radio" name="labelDirection" value="right" id="option1" autocomplete="off" > 
-                                        Right
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- #### ### #### -->
+
 
                 </form>
 				
@@ -205,269 +130,121 @@
 
             <div class="mainContent">
 				<h1 class="title">Template des formulaires</h1>
-                <div class="row">
-                    <div class="col-md-9">
-                        <h2 class="title">Présentation</h2>
-                        <p>Ce <strong>composant</strong> présente un template HTML simple et facile à utiliser qui permet de générer une vaste variété des formulaires en HTML.</p>
-                    </div>
-                    <div class="col-md-3">
-                        <a href="css/_form.css" class="downloadLink">download</a>
-                    </div>
-                </div>
-
-                
-
-                <h2 class="title">Code source et Usage</h2>
+             
+				<h2 class="title">Présentation</h2>
+				<p>Ce <strong>composant</strong> permet de vous calculer une estimation de charge du découpage graphique.</p>
+                    
 
                 <!-- ************* -->
                 
-                <div role="tabpanel">
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">HTML</a></li>
-                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">CSS</a></li>
-                    </ul>
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="home">
-                            <!-- #### -->
-<div class="codeRow">
-<pre><code class="html">&lt;body <span id="optDirRTL" style="display:none"> class="rtl"</span> >
-    
-    &lt;form method="post" class="<span id="opthzForm" style="display:none">horizontalForm</span><span id="optLabelDir" style="display:none"> rightLabels</span>" > 
-        &lt;!-- form row template start -->
-        &lt;div class="formField<span id="optLabelSize"></span>">
-            &lt;label for="itemId" class="<span id="optLabelRequired">required</span>" >label texte &lt;/label>
-            &lt;div class="formControl">
-                &lt;input type="text" name="itemName" id="itemId" value="" />
-                &lt;span class="messageBox error">Message... &lt;/span>
-            &lt;/div>
-        &lt;/div>
-        &lt;!-- form row template end -->
-        ...
-    &lt;/form>
-    
-&lt;/body></code></pre>
-</div>
-                            <!-- #### -->
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="profile">
-<pre><code class="html">.body{}</code></pre>
-                        </div>
-                    </div>
-                </div>
-                <h2 class="title">Form</h2>
+
+                <h2 class="title">Configurez le projet</h2>
 				<div id="mainFormBox2">
 					<form id="mainForm" method="post" action="#" enctype="multipart/form-data" class="horizontalForm" >
                         <fieldset>
                             <div class="formField">
+                                <label for="pagesNbr" class="required">Compatible</label>
+                                <div class="formControl">
+									<div class="btn-group" data-toggle="buttons">
+										<label class="btn btn-primary">
+											<input type="radio" name="compatible" value="Basic" id="compatible-yes" autocomplete="off" />
+											 Basic
+										</label>
+										<label class="btn btn-primary active">
+											<input type="radio" name="compatible" value="Advanced" id="advanced-no" autocomplete="off" checked /> 
+											Advanced
+										</label>
+										<label class="btn btn-primary">
+											<input type="radio" name="compatible" value="Full" id="full-no" autocomplete="off" /> 
+											Full
+										</label>
+									</div>
+									<!-- ** Sub content ** -->
+									<div class="clr"></div>
+									<div class="subContentGroup" data-parent="compatible">
+										<div id="subContentBasic" class="subContent">Basic</div>
+										<div id="subContentAdvanced" class="subContent active">
+											<div class="environnements">
+												<span class="env chrome" title="Google Chrome"></span>
+												<span class="env firefox" title="Mozilla Firefox"></span>
+												<span class="env ie" title="Internet Explorer">9+</span>
+												<span class="env edge" title="Edge"></span>
+												<span class="env safari" title="Safari">7+</span>
+												<span class="env opera" title="Opera"></span>
+												<span class="env apple" title="iOS (iPhone, iPad)" data-version="8">8+</span>
+                                                <span class="env android" title="Android">5+</span>
+											</div>
+										</div>
+										<div id="subContentFull" class="subContent">Full</div>
+									</div>
+									<!-- ** !Sub content ** -->
+								</div>
+                            </div>
+							<!-- ## ROW ## -->
+							<div class="formField">
                                 <label for="pagesNbr" class="required">Nombre des pages</label>
                                 <div class="formControl">
                                     <input type="number" name="pagesNbr" id="pagesNbr" class="mainControl small" value="1" min="1" required  >
 									<span class="messageBox">page(s), dont</span>
-									<input type="number" name="modelPagesNbr" id="modelPagesNbr" class="mainControl small" value="1" min="1" required  >
-									<span class="messageBox">page(s) modèle</span>
+									<input type="number" name="semblablePagesNbr" id="semblablePagesNbr" class="mainControl small" value="1" min="1" required  >
+									<span class="messageBox">page(s) semblables</span>
+									<span class="messageBox warning block">plus 8h pour la premier page</span>
                                 </div>
                             </div>
+							<!-- ## ROW ## -->
+							<div class="formField">
+								<label for="item1">Direction RTL</label>
+								<div class="formControl">
+									<div class="btn-group" data-toggle="buttons">
+										<label class="btn btn-primary">
+											<input type="radio" name="direction" value="smallLabel" id="direction-yes" autocomplete="off" >
+											 Oui
+										</label>
+										<label class="btn btn-primary active">
+											<input type="radio" name="direction" value="default" id="direction-no" autocomplete="off" checked > 
+											Non
+										</label>
+							
+									</div>
+								</div>
+							</div>
+							<!-- ## ROW ## -->
+							<div class="formField">
+								<label for="item1">Responsive Layout</label>
+								<div class="formControl">
+									<div class="btn-group" data-toggle="buttons">
+										<label class="btn btn-primary">
+											<input type="radio" name="responsive" value="smallLabel" id="responsive-yes" autocomplete="off" >
+											 Oui
+										</label>
+										<label class="btn btn-primary active">
+											<input type="radio" name="responsive" value="default" id="responsive-no" autocomplete="off" checked > 
+											Non
+										</label>
+							
+									</div>
+								</div>
+							</div>
+							<!-- ## ROW ## -->
+							<div class="formField">
+								<label for="item1">JavaScript</label>
+								<div class="formControl">
+									<div class="btn-group" data-toggle="buttons">
+										<label class="btn btn-primary active">
+											<input type="radio" name="js" value="smallLabel" id="js-yes" autocomplete="off" checked />
+											 Oui
+										</label>
+										<label class="btn btn-primary">
+											<input type="radio" name="js" value="default" id="js-no" autocomplete="off" /> 
+											Non
+										</label>
+									</div>
+								</div>
+							</div>
+							<!-- ## ROW ## -->
 						</fieldset>
 					</form>
 				</div>
-
-
-                <h2 class="title">Demo</h2>
-                    <div id="mainFormBox">
-                    <!-- Form -->
-                    <form id="mainForm" method="post" action="#" enctype="multipart/form-data" >
-                        <fieldset>
-                            <div class="formField">
-                                <label for="item1" class="required">Champ texte basique</label>
-                                <div class="formControl">
-                                    <input type="text" name="item1" id="item1" value="" required placeholder="Ecrivez ici..." >
-                                    <span class="messageBox">Message...</span>
-                                </div>
-                            </div>
-                            <!-- Row -->
-                            <div class="formField">
-                                <label for="item1" class="required">Champ obligatoire</label>
-                                <div class="formControl">
-                                    <input type="text" name="item1" id="item1" value="" required >
-                                    <span class="messageBox warning">Warning Message...</span>
-                                </div>
-                            </div>
-                            <!-- Row -->
-                            <div class="formField">
-                                <label for="autoFocus" class="required">Champ auto-focus</label>
-                                <div class="formControl">
-                                    <input type="text" name="item1" id="autoFocus" value="" auto-focus >
-                                    <span class="messageBox success">Success Message...</span>
-                                </div>
-                            </div>
-                            <!-- Row -->
-                            <div class="formField">
-                                <label for="email">Email</label>
-                                <div class="formControl">
-                                    <input type="email" name="email" id="email" class="mainControl" value="" required >
-                                </div>
-                            </div>
-                            <!-- Row -->
-                            <div class="formField">
-                                <label for="url">URL</label>
-                                <div class="formControl">
-                                    <input type="url" name="url" id="url" class="mainControl" value="" >
-                                </div>
-                            </div>
-                            <!-- Row -->
-                            <div class="formField">
-                                <label for="text">Champ au format spécifié</label>
-                                <div class="formControl">
-                                    <input type="text" name="text" id="text" class="mainControl" pattern="[A-Za-z]{3}" value="" >
-                                    <em class="messageBox">[A-Za-z]{3}</em>
-                                </div>
-                            </div>
-                            <!-- Row -->
-                            <div class="formField">
-                                <label for="item1">champ avec suggestions</label>
-                                <div class="formControl">
-                                    <input type="text" list="bieres" name="item1" id="choix_bieres" value="" >
-                                    <datalist id="bieres">
-                                        <option value="Meteor">Meteor</option>
-                                        <option value="Pils">Pils</option>
-                                        <option value="Kronenbourg">Kronenbourg</option>
-                                        <option value="Grimbergen">Grimbergen</option>
-                                    </datalist>
-                                </div>
-                            </div>
-                            <!-- Row -->
-                            <div class="formField">
-                                <label for="number" class="required">Champ numérique</label>
-                                <div class="formControl">
-                                    <input type="number" name="number" id="number" class="mainControl" step="1" min="-5" max="10" value="0" >
-                                </div>
-                            </div>
-                            <!-- Row -->
-                            <div class="formField">
-                                <label for="date" class="required">Champ Date</label>
-                                <div class="formControl">
-                                    <input type="date" name="date" id="date" min="2010-08-14" max="2011-08-14" class="mainControl" value="2010-08-14" >
-                                </div>
-                            </div>
-                            <!-- Row -->
-                            <div class="formField">
-                                <label for="range" class="required">Champ range</label>
-                                <div class="formControl">
-                                    <input type="range" name="range" id="range" min="0" max="50" value="10" />
-                                </div>
-                            </div>
-                            <!-- Row -->
-                            <div class="formField">
-                                <label for="search" class="required">Champ search</label>
-                                <div class="formControl">
-                                    <input type="search" name="search" id="search" results="10" placeholder="Search..." class="mainControl" value="" >
-                                </div>
-                            </div>
-                            <!-- Row -->
-                            <div class="formField">
-                                <label for="speech" class="required">Champ speech</label>
-                                <div class="formControl">
-                                    <input type="text" name="speech" id="speech" x-webkit-speech />
-                                </div>
-                            </div>
-                            <!-- Row -->
-                            <div class="formField">
-                                <label for="tel" class="required">Champ tel</label>
-                                <div class="formControl inlineOptions">
-									<div class="optionItem">
-										<input type="tel" name="telS" id="telS" placeholder="555" maxlength="3" class="mainControl small" value="" />
-									</div>
-									<div class="optionItem">
-										<input type="tel" name="tel" id="tel" placeholder="(555) 555-5555"  pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$" class="mainControl large" value="" />
-									</div>
-                                </div>
-                            </div>
-                            <!-- Row -->
-                            <div class="formField">
-                                <label for="color" class="required">Champ color</label>
-                                <div class="formControl">
-                                    <input type="color" name="color" id="color" placeholder="e.g. #bbbbbb" value="" >
-                                </div>
-                            </div>
-                            
-
-
-
-                            <!-- Row -->
-                            <div class="formField">
-                                <label for="item3">Select</label>
-                                <div class="formControl">
-                                    <select id="item3">
-                                        <option value="1">Option 1</option>
-                                        <option value="2">Option 2</option>
-                                        <option value="3">Option 3</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <!-- Row -->
-                            <div class="formField">
-                                <label for="item2">Radios inline</label>
-                                <div class="formControl inlineOptions customRadio">
-									<div class="optionItem">
-										<input type="radio" name="radioField" id="radioField1" value="1" />
-										<label for="radioField1">Radio Field 1</label>
-									</div>
-									<div class="optionItem">
-										<input type="radio" name="radioField" id="radioField2" value="2" />
-										<label for="radioField2">Radio Field 2</label>
-									</div>
-									<div class="optionItem">
-										<input type="radio" name="radioField" id="radioField3" value="3" />
-										<label for="radioField3">Radio Field 3</label>
-									</div>
-                                </div>
-                            </div>
-                            <!-- Row -->
-                            <div class="formField">
-                                <label for="item2">Radios block</label>
-                                <div class="formControl blockOptions customCheckbox">   
-									<div class="optionItem">
-										<input type="checkbox" name="checkboxField2" id="checkboxField1" value="4" />
-										<label for="checkboxField1">Radio Field 4</label>
-									</div>
-									<div class="optionItem">
-										<input type="checkbox" name="checkboxField2" id="checkboxField2" value="5" />
-										<label for="checkboxField2">Radio Field 5</label>
-									</div>
-									<div class="optionItem">
-										<input type="checkbox" name="checkboxField2" id="checkboxField3" value="6" />
-										<label for="checkboxField3">Radio Field 6</label>
-									</div>
-                                </div>
-                            </div>
-                            <!-- Row -->
-                            <div class="formField">
-                                <label for="file">File</label>
-                                <div class="formControl">
-                                    <input type="file" name="files" id="files" value=""  />
-                                </div>
-                            </div>
-                            <!-- Row -->
-                            <div class="formField">
-                                <div class="formControl">
-                                    <textarea cols="20" rows="2" name="msg" id="msg" placeholder="Votre message..." ></textarea>
-                                </div>
-                            </div>
-                            <!-- Row -->
-                            <div class="actionsRow labelMargin">
-                                <input type="reset" name="reset" id="reset" class="btn grayBtn" value="Reset"  />
-                                <input type="submit" name="submit" id="submit" class="btn blueBtn" value="Valider"  />
-                            </div>
-                        </fieldset>
-                    </form>
-                    <!-- !Form -->
-                    </div>
-                
-
-                
-
             </div>
 
   
@@ -521,50 +298,28 @@
             
         });
 
-        // labelStyle : mediumLabel ; smallLabel ; largeLabel
-        $("input[name=labelStyle]:radio").change(function () {
-            var labelStyle = $(this).val(); 
-
-            if(labelStyle == "default"){
-                $('#mainForm').removeClass('smallLabel');
-                $('#mainForm').removeClass('mediumLabel');
-                $('#mainForm').removeClass('largeLabel');
-            }else{
-                $('#mainForm').addClass(labelStyle);
-                $('#optLabelSize').hide();
-				
-				$('#optLabelSize').text( ' '+labelStyle );
-                $('#optLabelSize').show();
-            }
-            
-        });
-
-        // labelDirection
-        $("input[name=labelDirection]:radio").change(function () {
-            if($(this).val() == "right"){
-                $('#mainForm').addClass('rightLabels');
-                $('#optLabelDir').show();
-            }else{
-                $('#mainForm').removeClass('rightLabels');
-                $('#optLabelDir').hide();
-            }
-            
-        });
-
-        // requiredLabel
-        $("input[name=requiredLabel]:radio").change(function () {
-            if($(this).val() == "1"){
-                $('#mainForm').find('.formField > label').addClass('required');
-                $('#optLabelRequired').show();
-            }else{
-                $('#mainForm').find('.formField > label').removeClass('required');
-                $('#optLabelRequired').hide();
-            }
-            
-        });
+ 
 
     </script>
 
 </body>
 
 </html>
+
+<!-- 
+## HTML
+Mise en place de sous-menus
+Code commenté
+Temps de chargement optimisé	
+Optimisé pour le SEO
+
+## JS
+Popup / Lightbox	
+Eléments de formulaires spéciaux	
+Onglets/Tabs
+Accordéon
+Slider/Diaporama
+Tooltip	
+Calendrier
+Filtres de tri		
+-->

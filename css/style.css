@@ -35,6 +35,8 @@ h3.title{  background-color: #e8e8e8; padding: 4px 8px;}
 
 .clear, .clr{ clear:both; }
 
+.block{ display:block; }
+
 .sideBar{float: left; width: 500px; padding: 10px; }
 .mainContent{ margin-left: 500px; padding: 8px 20px; background-color: #FDFDFD;   overflow: hidden;}
 
@@ -68,20 +70,56 @@ h3.title{  background-color: #e8e8e8; padding: 4px 8px;}
 .carousel-control,
 .item { border-radius: 4px; }
 .caption { height: 130px; overflow: hidden; }
-.caption h4 {    white-space: nowrap;}
-.thumbnail img {    width: 100%;}
-.ratings {    padding-right: 10px;    padding-left: 10px;    color: #d17581;}
-.thumbnail {    padding: 0;}
-.thumbnail .caption-full {    padding: 9px;    color: #333;}
+.caption h4 { white-space: nowrap;}
+.thumbnail img { width: 100%;}
+.ratings { padding-right: 10px;    padding-left: 10px;    color: #d17581;}
+.thumbnail { padding: 0;}
+.thumbnail .caption-full { padding: 9px;    color: #333;}
 
 
 
-.tab-pane {background-color: #FFF;
-  border-style: solid;
-  border-color: #ddd;
-  border-width: 0px 1px 1px;
-  padding: 10px;}
+.tab-pane {
+background-color: #FFF;
+border-style: solid;
+border-color: #ddd;
+border-width: 0px 1px 1px;
+padding: 10px;}
 
 
 
-  #mapContainer{ height: 360px; }
+#mapContainer{ height: 360px; }
+
+.subContentGroup{}
+.subContent{display:none;}
+.subContent.active{display:block;}
+
+.environnements{overflow: hidden;padding: 8px 0 12px;}
+.env{ display: block;float: left; 
+  background-repeat: no-repeat;background-position: center bottom;background-size:auto 32px;
+  font-family: 'Trebuchet MS';font-size: 12px; line-height: 11px; font-weight: bold; color:#000; text-align: right;
+  width: 40px; height: 11px; padding: 4px 2px 41px;}
+.env + .env{ margin-left: 4px; }
+
+
+.env.chrome{background-image: url(../images/browsers/chrome.png);}
+.env.firefox{background-image: url(../images/browsers/firefox.png);}
+.env.ie{background-image: url(../images/browsers/internet_explorer.png);}
+.env.edge{background-image: url(../images/browsers/edge.png);}
+.env.safari{background-image: url(../images/browsers/safari.png);}
+.env.opera{background-image: url(../images/browsers/opera.png);}
+.env.apple{background-image: url(../images/browsers/apple.png);}
+.env.android{background-image: url(../images/browsers/android.png);}
+
+
+.supported{overflow: hidden;}
+.supported > span{  background-position: center bottom;background-repeat: no-repeat;color: #000;display: block;float: left;font-family: 'Trebuchet MS';font-size: 12px;font-weight: bold;height: 11px;letter-spacing: -1px;line-height: 10px; padding: 0 0 30px;text-align: right;text-shadow: 1px 1px 0 #FFF;vertical-align: top;width: 32px; margin-left:2px;}
+.supported > span.off{opacity: 0.25}
+.supported .firefox{background-image: url(../images/browsers/firefox.png)}
+.supported .chrome{background-image: url(../images/browsers/chrome.png)}
+.supported .ie{background-image: url(../images/browsers/ie.png)}
+.supported .safari{background-image: url(../images/browsers/safari.png)}
+.supported .opera{background-image: url(../images/browsers/opera.png)}
+.supported .netscape{background-image: url(../images/browsers/netscape.png)}
+.supported .traveler{background-image: url(../images/browsers/traveler.png)}
+.supported .maxthon{background-image: url(../images/browsers/maxthon.png)}
+.supported .world{background-image: url(../images/browsers/world.png)}
