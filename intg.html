@@ -114,17 +114,10 @@
                             
                         </div>
                     </div>
-                    
-
-
+  
                 </form>
 				
-				
-				
-				
-				
-				
-				
+
 				
             </div>
 
@@ -161,21 +154,38 @@
 									</div>
 									<!-- ** Sub content ** -->
 									<div class="clr"></div>
-									<div class="subContentGroup" data-parent="compatible">
-										<div id="subContentBasic" class="subContent">Basic</div>
+									<div id="compatibleSubContent" class="subContentGroup" data-parent="compatible">
+										<div id="subContentBasic" class="subContent">
+                                            <div class="environnements">
+                                                <span class="env chrome" title="Google Chrome"></span>
+                                                <span class="env firefox" title="Mozilla Firefox"></span>
+                                                <span class="env ie" title="Internet Explorer">9+</span>
+                                                <span class="env edge" title="Edge"></span>
+                                                <span class="env safari" title="Safari">7+</span>
+                                            </div>
+                                        </div>
 										<div id="subContentAdvanced" class="subContent active">
 											<div class="environnements">
 												<span class="env chrome" title="Google Chrome"></span>
 												<span class="env firefox" title="Mozilla Firefox"></span>
-												<span class="env ie" title="Internet Explorer">9+</span>
+												<span class="env ie" title="Internet Explorer">8+</span>
 												<span class="env edge" title="Edge"></span>
 												<span class="env safari" title="Safari">7+</span>
 												<span class="env opera" title="Opera"></span>
-												<span class="env apple" title="iOS (iPhone, iPad)" data-version="8">8+</span>
-                                                <span class="env android" title="Android">5+</span>
 											</div>
 										</div>
-										<div id="subContentFull" class="subContent">Full</div>
+										<div id="subContentFull" class="subContent">
+                                            <div class="environnements">
+                                                <span class="env chrome" title="Google Chrome"></span>
+                                                <span class="env firefox" title="Mozilla Firefox"></span>
+                                                <span class="env ie" title="Internet Explorer">7+</span>
+                                                <span class="env edge" title="Edge"></span>
+                                                <span class="env safari" title="Safari">6+</span>
+                                                <span class="env opera" title="Opera"></span>
+                                                <span class="env apple" title="iOS (iPhone, iPad)" data-version="8">8+</span>
+                                                <span class="env android" title="Android">5+</span>
+                                            </div>
+                                        </div>
 									</div>
 									<!-- ** !Sub content ** -->
 								</div>
@@ -240,6 +250,10 @@
 										</label>
 									</div>
 								</div>
+                                <div class="clr"></div>
+                                <div class="subContentGroup">
+                                    JavaScript
+                                </div>
 							</div>
 							<!-- ## ROW ## -->
 						</fieldset>
@@ -276,14 +290,21 @@
 
     <script type="text/javascript">
 
-        $("input[name=direction]:radio").change(function () {
-            $('#mainFormBox').attr('class', $(this).val());
-            if($(this).val() == "rtl"){
-                $("#optDirRTL").show();
-            }else{
-                $("#optDirRTL").hide();
-            }
+        // compatibleSubContent
+        $("input[name=compatible]:radio").change(function () {
+            val = $(this).val();
+            $('#compatibleSubContent').find('.subContent').hide();
+            $('#subContent'+ val).show();
         });
+
+        $("input[name=js]:radio").change(function () {
+            val = $(this).val();
+            $('.subContentGroup .subContent').hide();
+            $('#subContent'+ val).show();
+        });
+
+
+        
 
         $("input[name=horizontalForm]:radio").change(function () {
             if($(this).val() == 1){
