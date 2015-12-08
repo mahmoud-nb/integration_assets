@@ -107,10 +107,12 @@ select::-ms-expand {display: none;}
 .infoTxt{font-family: 'open_sansregular'; font-size: 16px; color:#b5b5b5;}
 /* message Box */
 .messageBox{font-family: 'open_sansitalic'; font-size:15px; line-height:16px; color:#b5b5b5; }
+.messageBox.b2{ line-height:36px; }
 .messageBox.block{ margin-top:6px; }
 .messageBox.error{color:#fd7a7a;}
 .messageBox.warning{color:#e79e7e;}
 .messageBox.success{color:#33a263;}
+.messageBox.black{color:#282828;}
 
 .absoluteMsg .formControl{position: relative;}
 .absoluteMsg .messageBox{position: absolute;top: 0;right: -190px;width: 180px;line-height: 20px;}

@@ -26,18 +26,6 @@
     <![endif]-->
 
 
-    <link rel="stylesheet" href="highlight/styles/monokai.css" />
-	
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="highlight/highlight.pack.js"></script>
-    <script>
-        $(document).ready(function() {
-          $('pre code').each(function(i, block) {
-            hljs.highlightBlock(block);
-          });
-        });
-        //hljs.initHighlightingOnLoad();
-    </script>
 
 </head>
 
@@ -97,16 +85,16 @@
                     <div class="formField">
                         
                         <div class="formControl">
-                            <div class="btn-group" data-toggle="buttons">
-                                <label class="btn btn-primary active">
+                            <div class="btn-group-box" data-toggle="buttons">
+                                <label class="btn btn-primary active" style="display:block; margin-bottom:4px;">
                                     <input type="radio" name="typeIntg" value="ltr" id="typeIntg-classic" autocomplete="off" checked> 
                                     PSD VERS HTML/CSS
                                 </label>
-                                <label class="btn btn-primary">
+                                <label class="btn btn-primary" style="display:block; margin-bottom:4px;">
                                     <input type="radio" name="typeIntg" value="rtl" id="typeIntg-email" autocomplete="off" > 
                                     PSD VERS EMAIL
                                 </label>
-								<label class="btn btn-primary">
+								<label class="btn btn-primary" style="display:block; margin-bottom:4px;">
                                     <input type="radio" name="typeIntg" value="rtl" id="typeIntg-cms" autocomplete="off" > 
                                     PSD VERS CMS
                                 </label>
@@ -117,45 +105,54 @@
   
                 </form>
 				
+				
+                <p>Ce <strong>composant</strong> permet de vous calculer une estimation de charge du découpage graphique.</p>
+
+                <h2 class="title">PSD VERS HTML/CSS</h2>
+				<p>L'intégration PSD vers page web tout en assurant:</p>
+				
+				<ul class="listview">
+					<li>Intégration HTML5/CSS3</li>
+                    <li>Respecter les normes W3C</li>
+					<li>Optimisé pour le SEO</li>
+					<li>Temps de chargement optimisé</li>
+				</ul>
+				
+				<div id="total"></div>
+				
 
 				
             </div>
 
             <div class="mainContent">
-				<h1 class="title">Template des formulaires</h1>
+				<h1 class="title">Configurez le projet</h1>
              
-				<h2 class="title">Présentation</h2>
-				<p>Ce <strong>composant</strong> permet de vous calculer une estimation de charge du découpage graphique.</p>
-                    
-
-                <!-- ************* -->
                 
-
-                <h2 class="title">Configurez le projet</h2>
 				<div id="mainFormBox2">
 					<form id="mainForm" method="post" action="#" enctype="multipart/form-data" class="horizontalForm" >
                         <fieldset>
                             <div class="formField">
-                                <label for="pagesNbr" class="required">Compatible</label>
+                                <label for="nbr" class="required">Compatible</label>
                                 <div class="formControl">
 									<div class="btn-group" data-toggle="buttons">
-										<label class="btn btn-primary">
-											<input type="radio" name="compatible" value="Basic" id="compatible-yes" autocomplete="off" />
+										<label class="btn btn-primary active">
+											<input type="radio" name="compatible" value="Basic" data-unit="8" id="compatible-basic" autocomplete="off" checked />
 											 Basic
 										</label>
-										<label class="btn btn-primary active">
-											<input type="radio" name="compatible" value="Advanced" id="advanced-no" autocomplete="off" checked /> 
+										<label class="btn btn-primary">
+											<input type="radio" name="compatible" value="Advanced" data-unit="10" id="compatible-advanced" autocomplete="off"  /> 
 											Advanced
 										</label>
 										<label class="btn btn-primary">
-											<input type="radio" name="compatible" value="Full" id="full-no" autocomplete="off" /> 
+											<input type="radio" name="compatible" value="Full" data-unit="12" id="compatible-full" autocomplete="off" /> 
 											Full
 										</label>
 									</div>
+									<span class="messageBox b2 black block">&nbsp;&nbsp; <strong class="unit">-</strong> heures par page</span>
 									<!-- ** Sub content ** -->
 									<div class="clr"></div>
 									<div id="compatibleSubContent" class="subContentGroup" data-parent="compatible">
-										<div id="subContentBasic" class="subContent">
+										<div id="subContentBasic" class="subContent active">
                                             <div class="environnements">
                                                 <span class="env chrome" title="Google Chrome"></span>
                                                 <span class="env firefox" title="Mozilla Firefox"></span>
@@ -164,7 +161,7 @@
                                                 <span class="env safari" title="Safari">7+</span>
                                             </div>
                                         </div>
-										<div id="subContentAdvanced" class="subContent active">
+										<div id="subContentAdvanced" class="subContent">
 											<div class="environnements">
 												<span class="env chrome" title="Google Chrome"></span>
 												<span class="env firefox" title="Mozilla Firefox"></span>
@@ -183,7 +180,8 @@
                                                 <span class="env safari" title="Safari">6+</span>
                                                 <span class="env opera" title="Opera"></span>
                                                 <span class="env apple" title="iOS (iPhone, iPad)" data-version="8">8+</span>
-                                                <span class="env android" title="Android">5+</span>
+                                                <span class="env android" title="Android">4+</span>
+                                                <span class="env windows" title="Windows Phone">8+</span>
                                             </div>
                                         </div>
 									</div>
@@ -192,70 +190,141 @@
                             </div>
 							<!-- ## ROW ## -->
 							<div class="formField">
-                                <label for="pagesNbr" class="required">Nombre des pages</label>
+                                <label for="nbr" class="required">Nombre des pages</label>
                                 <div class="formControl">
-                                    <input type="number" name="pagesNbr" id="pagesNbr" class="mainControl small" value="1" min="1" required  >
+                                    <input type="number" name="nbr" id="nbr" class="mainControl small" value="1" min="1" required onkeyup=" return false; console.log(this.value); " />
 									<span class="messageBox">page(s), dont</span>
-									<input type="number" name="semblablePagesNbr" id="semblablePagesNbr" class="mainControl small" value="1" min="1" required  >
+									<input type="number" name="semblablenbr" id="semblablenbr" class="mainControl small" value="0" min="0" required onkeydown=" return false; " />
 									<span class="messageBox">page(s) semblables</span>
-									<span class="messageBox warning block">plus 8h pour la premier page</span>
+									<span class="messageBox black block">- Le découpage de la premier page est multiplié par <strong>2</strong></span>
+									<span class="messageBox black block">- Le découpage des pages semblables est divisé par <strong>4</strong></span>
                                 </div>
                             </div>
 							<!-- ## ROW ## -->
 							<div class="formField">
-								<label for="item1">Direction RTL</label>
+								<label for="item1">Layout</label>
 								<div class="formControl">
 									<div class="btn-group" data-toggle="buttons">
-										<label class="btn btn-primary">
-											<input type="radio" name="direction" value="smallLabel" id="direction-yes" autocomplete="off" >
-											 Oui
-										</label>
 										<label class="btn btn-primary active">
-											<input type="radio" name="direction" value="default" id="direction-no" autocomplete="off" checked > 
-											Non
+											<input type="radio" name="layout" value="desktop" data-fact="1" id="layout-desktop" autocomplete="off" checked >
+											 Desktop
 										</label>
-							
+										<label class="btn btn-primary">
+											<input type="radio" name="layout" value="mobile" data-fact="0.75" id="layout-mobile" autocomplete="off"  > 
+											Mobile
+										</label>
+                                        <label class="btn btn-primary">
+                                            <input type="radio" name="layout" value="responsive" data-fact="1.75" id="layout-responsive" autocomplete="off" > 
+                                            Responsive
+                                        </label>
 									</div>
+									<span id="layoutFact" class="messageBox b2 block"></span>
 								</div>
 							</div>
-							<!-- ## ROW ## -->
-							<div class="formField">
-								<label for="item1">Responsive Layout</label>
-								<div class="formControl">
-									<div class="btn-group" data-toggle="buttons">
-										<label class="btn btn-primary">
-											<input type="radio" name="responsive" value="smallLabel" id="responsive-yes" autocomplete="off" >
-											 Oui
-										</label>
-										<label class="btn btn-primary active">
-											<input type="radio" name="responsive" value="default" id="responsive-no" autocomplete="off" checked > 
-											Non
-										</label>
-							
-									</div>
-								</div>
-							</div>
+                            <!-- ## ROW ## -->
+                            <div class="formField">
+                                <label for="item1">Direction RTL</label>
+                                <div class="formControl">
+                                    <div class="btn-group" data-toggle="buttons">
+                                        <label class="btn btn-primary">
+                                            <input type="radio" name="direction" value="1" id="direction-yes" autocomplete="off" >
+                                             Oui
+                                        </label>
+                                        <label class="btn btn-primary active">
+                                            <input type="radio" name="direction" value="0" id="direction-no" autocomplete="off" checked > 
+                                            Non
+                                        </label>
+                                    </div>
+                                    <span class="messageBox b2 block">&nbsp;&nbsp; +1 unit par page</span>
+                                </div>
+                            </div>
 							<!-- ## ROW ## -->
 							<div class="formField">
 								<label for="item1">JavaScript</label>
 								<div class="formControl">
 									<div class="btn-group" data-toggle="buttons">
-										<label class="btn btn-primary active">
-											<input type="radio" name="js" value="smallLabel" id="js-yes" autocomplete="off" checked />
+										<label class="btn btn-primary">
+											<input type="radio" name="js" value="1" id="js-yes" autocomplete="off" />
 											 Oui
 										</label>
-										<label class="btn btn-primary">
-											<input type="radio" name="js" value="default" id="js-no" autocomplete="off" /> 
+										<label class="btn btn-primary active">
+											<input type="radio" name="js" value="0" id="js-no" autocomplete="off" checked /> 
 											Non
 										</label>
 									</div>
 								</div>
-                                <div class="clr"></div>
-                                <div class="subContentGroup">
-                                    JavaScript
-                                </div>
 							</div>
+							<div id="subContentJS" class="subContentGroup" style="display:none">
+								<ul class="listview">
+									<li>Popup / Lightbox</li>
+									<li>Onglets / Tabs</li>
+									<li>Accordéon</li>
+									<li>Tooltip</li>
+									<li>Eléments de formulaires spéciaux</li>										
+									<li>Slider/Diaporama</li>
+									<li>Form Validation</li>
+					
+									<li>Calendrier</li>
+									
+								</ul>
+								
+								<!-- ## ROW ## -->
+								<div class="formField">
+									<label for="item1">Développement personnalisé</label>
+									<div class="formControl">
+										<div class="btn-group" data-toggle="buttons">
+											<label class="btn btn-primary">
+												<input type="radio" name="jsDevprs" value="1" id="jsdevprs-yes" autocomplete="off"  />
+												 Oui
+											</label>
+											<label class="btn btn-primary active">
+												<input type="radio" name="jsDevprs" value="0" id="jsdevprs-no" autocomplete="off" checked /> 
+												Non
+											</label>
+										</div>
+									</div>
+								</div>
+								<!-- ## ROW ## -->
+								<div class="formField">
+									<label for="item1">Filtres de tri</label>
+									<div class="formControl">
+										<div class="btn-group" data-toggle="buttons">
+											<label class="btn btn-primary">
+												<input type="radio" name="jsFiltres" value="1" id="jsSlider-yes" autocomplete="off"  />
+												 Oui
+											</label>
+											<label class="btn btn-primary active">
+												<input type="radio" name="jsFiltres" value="0" id="jsSlider-no" autocomplete="off" checked /> 
+												Non
+											</label>
+										</div>
+									</div>
+								</div>
+								<!-- ## ROW ## -->
+								<div class="formField">
+									<label for="item1">Slider personnalisé</label>
+									<div class="formControl">
+										<div class="btn-group" data-toggle="buttons">
+											<label class="btn btn-primary">
+												<input type="radio" name="jsSlider" value="1" id="jsSlider-yes" autocomplete="off"  />
+												 Oui
+											</label>
+											<label class="btn btn-primary active">
+												<input type="radio" name="jsSlider" value="0" id="jsSlider-no" autocomplete="off" checked /> 
+												Non
+											</label>
+										</div>
+									</div>
+								</div>
+								<!-- ## ROW ## -->
+							</div>
+							
 							<!-- ## ROW ## -->
+							<!-- Row -->
+                            <div class="actionsRow labelMargin">
+                                <input type="reset" name="reset" id="reset" class="btn grayBtn" value="Reset"  />
+                                <input type="button" name="submit" id="submit" class="btn blueBtn" value="Valider"  />
+                            </div>
 						</fieldset>
 					</form>
 				</div>
@@ -274,7 +343,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; 2015</p>
+                    <p class="alignCenter">Copyright &copy; 2015</p>
                 </div>
             </div>
         </footer>
@@ -283,40 +352,100 @@
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<!--    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+    <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
 
-        // compatibleSubContent
+    	var Integ = {
+    		params : {
+	           unit : $('[name=compatible]:checked').data('unit'),
+	           layout : $("input[name=layout]:checked").val(),
+	           layoutFact : $("input[name=layout]:checked").data('fact'),
+	           direction : 0,
+	           js : 0
+	        },
+
+	        total: 0,
+
+	        init: function(){
+	        	this.setCompatible($('input[name=compatible]:checked'));
+	        	this.setLayout( $("input[name=layout]:checked") );
+	        },
+
+	        setCompatible: function($Obj){
+	        	val = $Obj.val();
+	            this.params.unit = $Obj.data('unit');
+
+				$('.unit').text( this.params.unit );
+	            $('#compatibleSubContent').find('.subContent').hide();
+	            $('#subContent'+ val).show();
+	        },
+
+	        setLayout: function($Obj){
+	        	this.params.layout = $Obj.val();
+        		this.params.layoutFact = $Obj.data('fact');
+	        	layoutFact = (this.params.unit * this.params.layoutFact) - this.params.unit ;
+	        	layoutFactTxte = layoutFact > 1 ? '&nbsp;&nbsp; '+ layoutFact + ' heures par pages' : '&nbsp;&nbsp; '+ layoutFact + ' heure par pages' ;
+	        	$('#layoutFact').html( layoutFactTxte );
+	        },
+
+	        submit: function(){
+
+	        	this.params.nbr = isNaN( $('#nbr').val() ) ? 0 : $('#nbr').val();
+				this.params.semblablenbr = isNaN( $('#semblablenbr').val() ) ? 0 :  $('#semblablenbr').val();
+				
+				this.params.unit =	$('[name=compatible]:checked').data('unit');
+				this.params.layoutFact = $('[name=layout]:checked').data('fact');
+				this.params.direction =	$('[name=direction]:checked').val();
+				this.params.js =	$('[name=js]:checked').val();
+				
+				// pageUnite + LayoutFact + DirectionFact + JSFact
+				//unit = this.params.unit + (this.params.layoutFact * this.params.unit/2) + (this.params.direction * this.params.unit/4);
+				unitPage = ( this.params.unit * this.params.layoutFact ) + (this.params.direction * this.params.unit/4);
+				unitFirst = this.params.unit * 2;
+				unitDuplicated = this.params.unit / 4;
+
+				console.log( unitPage, unitFirst, unitDuplicated );
+				
+				this.total = unitFirst + ((this.params.nbr - Integ.params.semblablenbr - 1) * unitPage) + this.params.semblablenbr * unitDuplicated ;
+				this.days = Math.ceil(this.total / 8);
+				
+				console.log( this.params, this.total );
+				
+				$('#total').html('<h4>'+this.total + ' heures</h4><em>soit '+ this.days +' jours</em>');
+		    } 
+    	};
+
+    	Integ.init();
+
+
+    	// Compatible
         $("input[name=compatible]:radio").change(function () {
-            val = $(this).val();
-            $('#compatibleSubContent').find('.subContent').hide();
-            $('#subContent'+ val).show();
+        	Integ.setCompatible( $(this) )
         });
 
+        // Layout
+        $("input[name=layout]:radio").change(function () { // desktop ; mobile ; responsive
+        	Integ.setLayout( $(this) );
+        });
+
+        // Direction
+        $("input[name=direction]:radio").change(function () { // desktop ; mobile ; responsive
+        	Integ.params.direction = $(this).val();
+        });
+
+        // use JavaScript
         $("input[name=js]:radio").change(function () {
-            val = $(this).val();
-            $('.subContentGroup .subContent').hide();
-            $('#subContent'+ val).show();
+			if($(this).val() == 1){ $('#subContentJS').show();}else{ $('#subContentJS').hide(); }
         });
 
-
-        
-
-        $("input[name=horizontalForm]:radio").change(function () {
-            if($(this).val() == 1){
-                $('#mainForm').addClass('horizontalForm');
-                $('.showIsHorizontalForm').show();
-                $("#opthzForm").show();
-            }else{
-                $('#mainForm').removeClass('horizontalForm');
-                $('.showIsHorizontalForm').hide();
-                $("#opthzForm").hide();
-            }
-            
+        // Submit
+        $("#submit").click(function () {
+			Integ.submit();
         });
 
  
@@ -324,23 +453,4 @@
     </script>
 
 </body>
-
 </html>
-
-<!-- 
-## HTML
-Mise en place de sous-menus
-Code commenté
-Temps de chargement optimisé	
-Optimisé pour le SEO
-
-## JS
-Popup / Lightbox	
-Eléments de formulaires spéciaux	
-Onglets/Tabs
-Accordéon
-Slider/Diaporama
-Tooltip	
-Calendrier
-Filtres de tri		
--->

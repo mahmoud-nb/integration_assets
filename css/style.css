@@ -37,6 +37,8 @@ h3.title{  background-color: #e8e8e8; padding: 4px 8px;}
 
 .block{ display:block; }
 
+.alignCenter{text-align: center;}
+
 .sideBar{float: left; width: 500px; padding: 10px; }
 .mainContent{ margin-left: 500px; padding: 8px 20px; background-color: #FDFDFD;   overflow: hidden;}
 
@@ -106,6 +108,7 @@ font-family: 'Trebuchet MS';font-size: 12px; line-height: 11px; font-weight: bol
 .env.opera{background-image: url(../images/browsers/opera.png);}
 .env.apple{background-image: url(../images/browsers/apple.png);}
 .env.android{background-image: url(../images/browsers/android.png);}
+.env.windows{background-image: url(../images/browsers/microsoft.png);}
 
 
 .supported{overflow: hidden;}
@@ -120,3 +123,6 @@ font-family: 'Trebuchet MS';font-size: 12px; line-height: 11px; font-weight: bol
 .supported .traveler{background-image: url(../images/browsers/traveler.png)}
 .supported .maxthon{background-image: url(../images/browsers/maxthon.png)}
 .supported .world{background-image: url(../images/browsers/world.png)}
+
+.listview{padding:0 20px;}
+.listview li{}
