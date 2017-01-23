@@ -1,13 +1,13 @@
 ﻿/**
- * CSS : forms
+ * CSS : Forms
  * @autor : Mahmoud NBET
- * @email : mahmoud.nbet@proxym-
+ * @email : mahmoud.nbet@proxym-it.com
  */
 
 @charset "utf-8";
 
 /* --- Form --- */
-input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;*font-size:100%}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;font-size:100%;}
 form{}
 fieldset{border:none;} 
 legend{}
@@ -18,8 +18,9 @@ legend{}
 .mediumFields .formField{margin-bottom:12px; }
 .minFields .formField{margin-bottom:4px; }
 
-/* Label */
-.formField > label{display:block; font-family: 'open_sansregular'; font-size: 14px; color:#4b5160; line-height: 22px; padding: 8px 0; margin: 0;}
+/* Label : global */
+.formField > label{ font-family: 'open_sansregular'; font-size: 14px; line-height: 22px; color:#4b5160; }
+.formField > label{display:block; padding: 8px 0; margin: 0;}
 .rightLabels .formField > label{text-align: right;}
 .formField > label.required:after{content:'*';color: #CA1111; margin: 0 2px;}
 .formField > label.suf:after{content:':';}
@@ -57,7 +58,7 @@ button, input, select, textarea { display: inline-block; line-height: normal; }
 
 .mainControl,
 .formControl input[type=text],.formControl input[type=email], .formControl input[type=password], .formControl input[type=tel], .formControl input[type="search"],
-.formControl textarea{font-family: 'open_sansregular'; font-size: 16px; color:#5570ae; border: 1px solid #5571ae;border-radius: 1px; padding: 6px 8px 8px; box-shadow:0 0; width:100%; box-sizing:border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;}
+.formControl textarea{font-family: 'open_sansregular'; font-size: 15px; color:#5570ae; border: 1px solid #5571ae;border-radius: 1px; padding: 6px 8px 8px; box-shadow:0 0; width:100%; box-sizing:border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;}
 
 .formControl .mainControl[readonly], .formControl input[readonly], .formControl textarea[readonly]{ border: none; padding: 0; color: #5570ae;}
 
@@ -106,7 +107,7 @@ select::-ms-expand {display: none;}
 
 .infoTxt{font-family: 'open_sansregular'; font-size: 16px; color:#b5b5b5;}
 /* message Box */
-.messageBox{font-family: 'open_sansitalic'; font-size:15px; line-height:16px; color:#b5b5b5; }
+.messageBox{font-family: 'open_sansitalic','open_sansregular'; font-size:14px; line-height:16px; color:#b5b5b5; }
 .messageBox.b2{ line-height:36px; }
 .messageBox.block{ margin-top:6px; }
 .messageBox.error{color:#fd7a7a;}
@@ -162,6 +163,71 @@ label.btn{ background-color: #DEDEDE; min-height: 36px; line-height: 36px; font-
 .formField .large{width: 170px!important;}
 .full{width: 100%;}
 .formField .auto{width: auto;}
+
+
+/* ######### Custom fields ######### */
+/* Spin Buttons modified */
+
+input[type=time], input[type=number]{ position: relative; }
+input[type=time]::-webkit-outer-spin-button, 
+input[type=time]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button, 
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none; -moz-appearance: textfield;
+    cursor:pointer;
+    background: url(../images/spin.png) no-repeat right center;
+    display: inline-block; width:20px; height: 100%; margin: 1px;
+    opacity: .8;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+input[type=time]::-webkit-inner-spin-button:hover,
+input[type=time].mod::-webkit-inner-spin-button:active,
+input[type=number]::-webkit-inner-spin-button:hover,
+input[type=number].mod::-webkit-inner-spin-button:active{
+    opacity: 1;
+}
+
+input[type=time], input[type=number]{ position: relative; }
+input[type=time]::-moz-outer-spin-button, 
+input[type=time]::-moz-inner-spin-button,
+input[type=number]::-moz-outer-spin-button, 
+input[type=number]::-moz-inner-spin-button {
+    -moz-appearance: none; -moz-appearance: textfield;
+    cursor:pointer;
+    background: url(../images/spin.png) no-repeat right center;
+    display: inline-block; width:20px; height: 100%; margin: 1px;
+    opacity: .8;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+input[type=time]::-moz-inner-spin-button:hover,
+input[type=time].mod::-moz-inner-spin-button:active,
+input[type=number]::-moz-inner-spin-button:hover,
+input[type=number].mod::-moz-inner-spin-button:active{
+    opacity: 1;
+}
+
+
+/*
+input[type=date]::-webkit-inner-spin-button {
+ -webkit-appearance: none;appearance:none;
+ display: none;
+}
+*/
+/*
+input[type=date]::-webkit-calendar-picker-indicator {
+    -webkit-appearance: none;appearance:none;
+    display: none;
+}
+*/
+
+
+/* ######### RESPONSIVE ######### */
 
 /* TABLET */ 
 @media only screen and (max-width : 980px) and (orientation : landscape) { 

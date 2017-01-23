@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Template des formulaires</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"> -->
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="css/fonts/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/fonts/OpenSans/stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="css/fonts/Montserrat/stylesheet.css" />
+
+    <link href="css/clndr.css" rel="stylesheet">
+    <link href="css/_form.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- <link href="css/_forms.css" rel="stylesheet"> -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <link rel="stylesheet" href="highlight/styles/monokai.css" />
+	
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="highlight/highlight.pack.js"></script>
+    <script>
+        $(document).ready(function() {
+          $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+          });
+        });
+        //hljs.initHighlightingOnLoad();
+    </script>
+
+    <!-- https://github.com/digitalBush/jquery.maskedinput -->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Git.Share</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+					<li>
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" >(X)HTML/CSS</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="forms.html">Formulaires template</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" >JavaScript</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="map.html">GMAP</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="mainContainer">
+
+        
+
+            <div class="sideBar">
+                
+				
+				
+				
+				
+				
+				<h2 class="title">Options</h2>
+
+                <form id="configForm" method="post" action="#" enctype="multipart/form-data" class="horizontalForm">
+                    <h3 class="title">Form</h3>
+                    <!-- #### ### #### -->
+                    <div class="formField">
+                        <label for="item1">Direction</label>
+                        <div class="formControl">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-primary active">
+                                    <input type="radio" name="direction" value="ltr" id="option2" autocomplete="off" checked> 
+                                    Left to Tight (LTR)
+                                </label>
+                                <label class="btn btn-primary">
+                                    <input type="radio" name="direction" value="rtl" id="option1" autocomplete="off" > 
+                                    Right to Left (RTL)
+                                </label>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- #### ### #### -->
+                    <div class="formField">
+                        <label for="item1">Mode</label>
+                        <div class="formControl">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-primary active">
+                                    <input type="radio" name="horizontalForm" value="0" id="option2" autocomplete="off" checked >
+                                     Verticale
+                                </label>
+                                <label class="btn btn-primary">
+                                    <input type="radio" name="horizontalForm" value="1" id="option1" autocomplete="off" > 
+                                    Horizontale
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- #### ### #### -->
+                    <h3 class="title">Label</h3>
+                    <div class="formField">
+                        <label for="item1">Required</label>
+                        <div class="formControl">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-primary active">
+                                    <input type="radio" name="requiredLabel" value="1" id="requiredLabel1" autocomplete="off" checked >
+                                     Oui
+                                </label>
+                                <label class="btn btn-primary">
+                                    <input type="radio" name="requiredLabel" value="0" id="requiredLabel0" autocomplete="off" > 
+                                    Non
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="showIsHorizontalForm" style="display:none;">
+                        <div class="formField">
+                            <label for="item1">Size</label>
+                            <div class="formControl">
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-primary">
+                                        <input type="radio" name="labelStyle" value="smallLabel" id="option2" autocomplete="off" >
+                                         Small
+                                    </label>
+                                    <label class="btn btn-primary active">
+                                        <input type="radio" name="labelStyle" value="default" id="option1" autocomplete="off" checked > 
+                                        Default
+                                    </label>
+                                    <label class="btn btn-primary">
+                                        <input type="radio" name="labelStyle" value="mediumLabel" id="option1" autocomplete="off" > 
+                                        Medium
+                                    </label>
+                                    <label class="btn btn-primary">
+                                        <input type="radio" name="labelStyle" value="largeLabel" id="option1" autocomplete="off" > 
+                                        Large
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- #### ### #### -->
+                        <div class="formField">
+                            <label for="item1">Direction</label>
+                            <div class="formControl">
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-primary active">
+                                        <input type="radio" name="labelDirection" value="left" id="option2" autocomplete="off" checked> 
+                                        Left
+                                    </label>
+                                    <label class="btn btn-primary">
+                                        <input type="radio" name="labelDirection" value="right" id="option1" autocomplete="off" > 
+                                        Right
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- #### ### #### -->
+
+                </form>
+				
+				
+				
+				
+				
+				
+				
+				
+            </div>
+
+            <div class="mainContent">
+				<h1 class="title">Template des formulaires</h1>
+                <div class="row">
+                    <div class="col-md-9">
+                        <h2 class="title">Présentation</h2>
+                        <p>Ce <strong>composant</strong> présente un template HTML simple et facile à utiliser qui permet de générer une vaste variété des formulaires en HTML.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="css/_form.css" class="downloadLink">download</a>
+                    </div>
+                </div>
+
+                
+
+                <h2 class="title">Code source et Usage</h2>
+
+                <!-- ************* -->
+                
+                <div role="tabpanel">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">HTML</a></li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">CSS</a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="home">
+                            <!-- #### -->
+<div class="codeRow">
+<pre><code class="html">&lt;div class="cal1">&lt;/div></code></pre>
+</div>
+                            <!-- #### -->
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="profile">
+<pre><code class="html">.body{}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                  
+
+
+                <h2 class="title">Demo</h2>
+                    <div id="mainFormBox">
+                    <!-- Form -->
+                        <div class="cal1"></div>
+                    <!-- !Form -->
+                    </div>
+                
+            </div>
+
+  
+
+    </div>
+    <!-- /.container -->
+
+    <div class="container">
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; 2016</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    
+    <script src="js/moment.min.js"></script>
+    <script src="js/underscore-min.js"></script>
+    <script src="js/clndr.js"></script>
+
+    <script type="text/javascript">
+
+
+    var Calendar = {
+        events: [],
+        eventsCache: [],
+        options: {
+            daysOfTheWeek: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+            lang: "fr"
+        },
+
+        currentDay: '',
+        currentMonth: '',
+        currentYear: '',
+
+        init: function (events, options, dom) {
+            dom = typeof dom != "undefined" ? dom : '.cal1';
+            events = typeof events != "undefined" ? events : this.events;
+
+            if (typeof options != "undefined") {
+                this.setOptions(options);
+            }
+
+            moment.lang(this.options.lang);
+
+            // TODO
+            if(this.options.lang == 'fr'){
+                moment.locale('fr', {
+                      months : "janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre".split("_"),
+                      monthsShort : "janv._févr._mars_avr._mai_juin_juil._août_sept._oct._nov._déc.".split("_"),
+                      weekdays : "dimanche_lundi_mardi_mercredi_jeudi_vendredi_samedi".split("_"),
+                      weekdaysShort : "dim._lun._mar._mer._jeu._ven._sam.".split("_"),
+                      weekdaysMin : "Di_Lu_Ma_Me_Je_Ve_Sa".split("_")
+                });
+            }
+            
+
+            this.clndr = $(dom).clndr({
+                //template: $('#calendar-template').html(),
+                daysOfTheWeek: Calendar.options.daysOfTheWeek,
+                events: events,
+                eventsCache: {},
+
+                multiDayEvents: {
+                    startDate: 'startDate',
+                    endDate: 'endDate',
+                    singleDay: 'date'
+                },
+
+                showAdjacentMonths: true,
+                adjacentDaysChangeMonth: false,
+
+                clickEvents: {
+                    click: function (target) {
+                        // console.log('click :: Cal-1 clicked: ', target, target.date._i);
+                        if (typeof target.date._d != "undefined") {
+                            Calendar.setDate(target.date._d);
+                            ///////////////////////// on Click :: TODO
+                            // console.log(Calendar, target);
+                        }
+
+                        if (typeof target.date._d != "undefined") {
+                            events = Calendar.clndr.eventsThisMonth; //target.events;
+                            //console.log("events", events);
+
+                            if (events.length > 0) {
+                                displayEvents(events);
+                            }
+                        }
+                    },
+                    onMonthChange: function (month) { 
+                        console.log('onMonthChange :: you just went to ' + month.format('MMMM, YYYY'));
+                        if (typeof month._d != "undefined") {
+                            Calendar.setDate(month._d);
+                            Calendar.getEvents();
+                        }
+                    },
+                    //today: function () { console.log('Cal-1 today');},
+                    //nextMonth: function () { console.log('Cal-1 next month');},
+                    //previousMonth: function () { console.log('Cal-1 previous month');},
+                    //nextYear: function () { console.log('Cal-1 next year');},
+                    //previousYear: function () { console.log('Cal-1 previous year');},
+                    //onYearChange: function () { console.log('Cal-1 year changed');},
+                    //nextInterval: function () { console.log('Cal-1 next interval');},
+                    //previousInterval: function () { console.log('Cal-1 previous interval');},
+                    //onIntervalChange: function () { console.log('Cal-1 interval changed');}
+                },  // !clickEvents
+                doneRendering: function() {
+                    console.log('this would be a fine place to attach custom event handlers.');
+                }
+
+
+                // ## Go to the next month
+                //theCalendarInstance.forward();
+
+                // ## Go to the previous month
+                //theCalendarInstance.back();
+
+                // ## Set the month using a number from 0-11 or a month name
+                //theCalendarInstance.setMonth(0);
+                //theCalendarInstance.setMonth('February');
+
+                // ## Go to the next year
+                //theCalendarInstance.nextYear();
+
+                // ## Go to the previous year
+                //theCalendarInstance.previousYear();
+
+                // ## Set the year
+                //theCalendarInstance.setYear(1997);
+
+                // ## Change the events. Note that this triggers a re-render of the calendar.
+                //theCalendarInstance.setEvents(newEventsArray);
+
+                // ## Add events. Note that this triggers a re-render of the calendar.
+                //theCalendarInstance.addEvents(additionalEventsArray);
+
+            });
+
+            // Bind all clndrs to the left and right arrow keys
+            $(document).keydown(function (e) {
+                if (e.keyCode == 37) {
+                    Calendar.clndr.back();
+                }
+
+                if (e.keyCode == 39) {
+                    Calendar.clndr.forward();
+                }
+            });
+        },
+        // #######################################
+        setOptions: function (options) {
+            $.extend(this.options, options);
+            return this;
+        },
+        // #######################################
+        setDate: function (targetDate) {
+            d = new Date(targetDate);
+            this.currentDay = d.getDate();
+            this.currentMonth = parseInt(d.getMonth()) + 1;
+            this.currentYear = d.getFullYear();
+            return this;
+        },
+        // ####################################### // Add events. Note that this triggers a re-render of the calendar.
+        addEvents: function (events) {
+            this.clndr.addEvents(events);
+            return this;
+        },
+        // ####################################### // Change the events. Note that this triggers a re-render of the calendar.
+        setEvents: function (events) {
+            this.clndr.setEvents(events);
+            return this;
+        },
+        // #######################################
+        /**
+         * options = { "day" , "month" , "year" , "eventId" }
+         */
+        getEvents: function () {
+            var index = this.currentYear + 'M' + this.currentMonth;
+            if (typeof this.eventsCache[index] != "undefined") {
+                Calendar.setEvents(this.eventsCache[index]);
+            } else {
+                // Invok Load Events WS
+                loadEvents(this.currentMonth, this.currentYear).done(function (res) {
+                    //console.log('loadEvents:', Calendar, res);
+                    events = res;
+                    Calendar.setEvents(events);
+                    Calendar.eventsCache[index] = events;
+                }).fail(function (res) {
+                    // TODO
+                    console.log('Fail');
+                });
+            }
+            return this;
+        }
+    };
+
+    function loadEvents(month, year){
+        var deferred = $.Deferred();
+        // TODO
+        return deferred;
+    }
+
+    function displayEvents(events){
+        var _html = '';
+        if(events.length > 0){
+                    
+            $('.emptyCalender').hide();
+            for(i in events){
+            console.log('FOR', events[i], events[i].count);
+            
+                _html += '<div class="blockCalender">'+
+                    '<h2 class="colorBlue">'+ events[i].title +'</h2>'+
+                    '<i class="fa fa-clock-o colorBlue"></i> <a href="">'+ events[i].date +'</a>'+
+                    '<i class="fa fa-map-marker colorBlue leftIcon"></i> <a href="">Piscine pontoise</a>'+
+                    '<span class="grey block">'+ events[i].count +' personnes ont répondu à cette annonce</span>'+
+                    '<div class="btnCalender"><a href="" class="button btn btnBlue">BOOSTER VOTRE ANNONCE</a></div>'+
+                '</div>';
+
+                //console.log('_HTML', _html);
+            }
+        }else{
+            $('.emptyCalender').show();
+        }
+        $('.eventCalender').html(_html);
+    }
+
+// ### Ready
+$(document).ready(function () {
+
+    var daysOfTheWeekByLang = {
+        'fr' : ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+        'en' : ['S', 'M', 'T', 'W', 'T', 'F', 'S']
+        //'ar' : ['السبت', 'الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة']
+    };
+    var options = {};
+    var currentLang = 'fr';
+    if (currentLang) {
+        options = { 'lang': currentLang, 'daysOfTheWeek': daysOfTheWeekByLang[currentLang] };
+    }
+
+    var eventArray = [
+        {
+            date: '2016-01-19',
+            title: 'Single Day Event 1',
+            status: 'approved',
+            count: 10,
+            place: 'Paris'
+
+        },
+        {
+            date: '2016-01-21',
+            title: 'Single Day Event 2',
+            status: 'approved',
+            count: 8,
+            place: ''
+        },
+        {
+            date: '2016-01-17',
+            title: 'Single Day Event 3',
+            status: 'passed',
+            count: 8,
+            place: ''
+        },
+        {
+            date: '2016-02-02',
+            title: 'Single Day Event',
+            status: 'passed',
+            count: 8,
+            place: ''
+        },
+        {
+            date: '2016-02-02',
+            title: 'Single Day Event 44',
+            status: 'passed',
+            count: 8,
+            place: ''
+        }
+    ];
+
+    Calendar.init(eventArray, options);
+    
+    var d = new Date();
+    var month = d.getMonth() + 1;
+    var year = d.getFullYear();
+    loadEvents(month, year).done(function (res) {
+        console.log("Done", res);
+
+        if (res.length > 0) {
+            console.log(Calendar, res);
+            Calendar.addEvents(res);
+        }
+
+    }).fail(function (res) {
+        // TODO
+        console.log(res.get_message() + "\n" + res.get_stackTrace());
+    });
+});
+
+/*
+function convertArabicDigitsToEnglishDigits(str) {
+    try {
+        s = str.replace(/[٠١٢٣٤٥٦٧٨٩]/g, function (d) { return parseInt(d.charCodeAt(0)) - 1632; }).replace(/[۰۱۲۳۴۵۶۷۸۹]/g, function (d) { return parseInt(d.charCodeAt(0)) - 1776; });
+    } catch (e) {
+        console.log('exception', e);
+        s = str;
+    }
+
+    return s;
+};*/
+
+</script>
+
+</body>
+
+</html>

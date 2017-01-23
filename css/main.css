@@ -1,0 +1,188 @@
+/**
+ * @autor : Mahmoud NBET
+ * @email : mahmoud.nbet@proxym-
+ */
+
+@charset "utf-8";
+/* CSS Document */
+@import "fonts/OpenSans/stylesheet.css"; /* Importation du font-face */
+@import "_form.css"; /* Importation du style form */
+/* --- Général ---  */
+*{margin:0; padding:0; outline: none;}
+/* -ms-overflow-style: auto | none | scrollbar | -ms-autohiding-scrollbar */
+body{font-family: 'open_sansregular'; font-size:14px; line-height: 26px; color: #373737; background-color: #f0f2f5; }
+
+a{color:#5571ae;}
+a:link {}
+a:visited {}
+a:hover {}
+a:active {}
+
+a img{ border:none;}
+
+pre{padding: 8px; margin: 0;}
+pre code{font-size: 12px;}
+
+h1{font-family: 'open_sansextrabold'; font-size:31px; line-height: 38px; color:#5873b1; font-weight: normal; text-transform: uppercase; margin-bottom:26px;}
+h1 > span{font-family: 'open_sansregular';}
+h2{font-family: 'open_sansregular'; font-size:28px; line-height: 36px; font-weight: normal; color:#5571ae; text-transform: uppercase; margin-bottom:14px;}
+h3{font-family: 'open_sanssemibold'; font-size:16px; color:#5571ae;line-height: 28px; margin:0 0 8px;font-weight: normal;}
+h4{font-family: 'open_sanssemibold'; font-size:28px;color: #373737;text-transform: uppercase; margin:0 0 18px;}
+h5{}
+h6{}
+
+h3.title{  background-color: #e8e8e8; padding: 4px 8px;}
+
+.clear, .clr{ clear:both; }
+
+.block{ display:block; }
+
+.alignCenter{text-align: center;}
+
+
+
+
+
+
+/* Floating Box */
+.floating:after{display:block; content:''; clear:both;}
+.left{float:left!important;}
+.right{float:right!important;}
+/* Clear Fix */
+.clearfix:before,.clearfix:after {content:" ";display: table;}.clearfix:after {clear: both;}
+.clr, .clear{clear:both;}
+.overflowHidden{ overflow: hidden!important; }
+/* !Floating Box */
+
+
+/* >>> Grid view ################################# */
+.grid{}
+.grid:after, .mobileGrid:after {content: ".";display: block; clear: both;visibility: hidden; line-height: 0;  height: 0;}
+.grid > [class^=cell], .mobileGrid > [class^=cell]{float: left; box-sizing:border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;}
+
+/* .grid.expanded{ margin: 0 -4px; } */
+.grid.expanded > [class^=cell], .mobileGrid.expanded > [class^=cell], .tableGrid.expanded > [class^=cell]{ padding: 0 4px;}
+.grid.expanded.e6 > [class^=cell], .mobileGrid.expanded.e6 > [class^=cell], .tableGrid.expanded.e6 > [class^=cell]{ padding: 0 6px;}
+.grid.expanded.e8 > [class^=cell], .mobileGrid.expanded.e8 > [class^=cell], .tableGrid.expanded.e8 > [class^=cell]{ padding: 0 8px;}
+.grid.expanded.e12 > [class^=cell], .mobileGrid.expanded.e12 > [class^=cell], .tableGrid.expanded.e12 > [class^=cell]{ padding: 0 12px;}
+.grid.expanded.e24 > [class^=cell], .mobileGrid.expanded.e29 > [class^=cell], .tableGrid.expanded.e29 > [class^=cell]{ padding: 0 24px;}
+.grid.expanded.e32 > [class^=cell], .mobileGrid.expanded.e32 > [class^=cell], .tableGrid.expanded.e32 > [class^=cell]{ padding: 0 32px;}
+
+.grid.expanded.e50 > [class^=cell], .mobileGrid.expanded.e50 > [class^=cell], .tableGrid.expanded.e50 > [class^=cell]{ padding: 0 50px;}
+
+/* @media only screen and (min-width : 640px) {} */
+.grid.expanded > [class^=cell]:first-child, .grid.expanded > [class^=cell].first,
+.mobileGrid.expanded > [class^=cell]:first-child, .mobileGrid.expanded > [class^=cell].first,
+.tableGrid.expanded > [class^=cell]:first-child, .tableGrid.expanded > [class^=cell].first{padding-left: 0;}
+.grid.expanded > [class^=cell]:last-child, .grid.expanded > [class^=cell].last,
+.mobileGrid.expanded > [class^=cell]:last-child, .mobileGrid.expanded > [class^=cell].last,
+.tableGrid.expanded > [class^=cell]:last-child, .tableGrid.expanded > [class^=cell].last{padding-right: 0;}
+
+.tableGrid{display: table;width: 100%;box-sizing:border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;}
+.tableGrid > [class^=cell]{float: none; display: table-cell; vertical-align: top;}
+.cell1{width: 8.33333%;}
+.cell2{width: 16.6666%;} 
+.cell20{width: 20%;}
+.cell3{width: 25%;}
+.cell4{width: 33.3333%;}
+.cell5{width: 41.6666%;}
+.cell6{width: 50%;}
+.cell7{width: 58.3333%;}
+.cell8{width: 66.6666%;}
+.cell9{width: 75%;}
+.cell10{width: 83.3333%;}
+.cell11{width: 91.6666%;}
+.cell12{width: 100%;}
+
+/* >>> !Grid view ################################# */
+
+/* Utils ################################# */
+.alignRight{text-align:right!important;}
+.alignCenter{text-align:center!important;}
+.alignLeft {text-align:left!important;}
+.alignJustify{text-align:justify!important;}
+.centerBlock{margin-left:auto;margin-right:auto;}
+
+.block{display:block!important;}
+.inline{display:inline!important;}
+
+.relative{ position: relative; }
+.pointer{ cursor:pointer; }
+
+.coverBg {
+    -webkit-background-size: cover!important;
+    -moz-background-size: cover!important;
+    -o-background-size: cover!important;
+    background-size: cover!important;
+    background-repeat:no-repeat;
+}
+/* Utils ################################# */
+.mainContainer{ overflow: hidden; }
+footer{background-color: #CCD4E1; padding: 16px 0 5px;}
+.nav-list .submenu{ padding-left: 20px; }
+.nav-list .submenu li a{ padding: 2px 15px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sideBar{float: left; width: 500px; padding: 10px; }
+.mainContent{ margin-left: 500px; padding: 8px 20px; background-color: #FDFDFD;   overflow: hidden;}
+
+
+#screen{margin-top: 8px; margin-bottom: 8px;}
+#screen.tablet{   background: url(../images/pad-port.png) no-repeat top left;
+  padding: 65px 59px 111px;
+  min-height: 1212px;
+  width: 900px;margin: 0 auto;}
+#screen.mobile{   background: url(../images/phone-port.png) no-repeat top center;
+  min-height: 765px;
+  padding: 133px 27px 137px 30px;
+  width: 393px;
+  margin: 0 auto;}
+#screen.mobile.land{background: url(../images/phone-land.png) no-repeat top center; overflow-y: auto;}
+
+
+.downloadLink{ background:url(../images/download-icon.png) no-repeat center center; background-size: 100%;
+  width: 120px;
+  height: 120px;
+  display: block;
+  margin: 5px;
+  text-indent: -9999px;}
+
+
+.codeRow{   overflow-x: auto; }
+
+
+.slide-image {  width: 100%; }
+.carousel-holder {  margin-bottom: 30px; }
+.carousel-control,
+.item { border-radius: 4px; }
+.caption { height: 130px; overflow: hidden; }
+.caption h4 { white-space: nowrap;}
+.thumbnail img { width: 100%;}
+.ratings { padding-right: 10px;    padding-left: 10px;    color: #d17581;}
+.thumbnail { padding: 0;}
+.thumbnail .caption-full { padding: 9px;    color: #333;}
+
+
+
+.tab-pane {
+background-color: #FFF;
+border-style: solid;
+border-color: #ddd;
+border-width: 0px 1px 1px;
+padding: 10px;}
+
+
+#mapContainer{ height: 360px; }

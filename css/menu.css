@@ -1,0 +1,50 @@
+/* Transition */
+.annimated, .panelmenu {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;  
+}
+
+/* Panel menu */
+.panelmenu { /*this is the nav*/
+  background: #3c3933;
+  width: 240px; height: 100%;
+}
+
+.panelmenu a {
+  display: block; padding: 16px;
+  font-size: 16px; font-weight: bold; color: #fff; text-decoration: none;
+  border-top: 1px solid #56544e; border-bottom: 1px solid #312e2a;
+}
+
+.panelmenu a:hover {  background:#00A287; }
+
+/* PUSH */
+.pushmenu{ position:fixed; top: 0; z-index: 1000;  }
+.pushmenu.fromLeft{ left:-240px; }
+.pushmenu.fromLeft.open{ left:0px; }
+.pushmenu.fromLeft + .container{}
+
+/* OVERLY */
+
+
+.pushmenu-left { left: -240px; }
+
+.pushmenu-left.pushmenu-open { left: 0; }
+
+.pushmenu-push {overflow-x: hidden; position: relative;left: 0;}
+
+.pushmenu-push-toright { left: 240px; }
+
+/* Header */
+
+#nav_list {
+  background: url(http://www.onlywebpro.com/demo/jquery/icon_nav.png) no-repeat left top;
+  cursor: pointer;
+  width: 33px;height: 27px;
+  text-indent: -99999em;
+}
+
+.nav-list.active {background-position: -33px top;}
+.buttonset { background: #00A287; padding: 10px; }
+section.content {  padding: 20px; }
